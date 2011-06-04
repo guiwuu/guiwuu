@@ -60,4 +60,4 @@ for agent in ${agents[@]};do
 done
 
 result=`curl -s $page |grep -v "href"|grep -v "title"|sed "s/<[^<>]*>//g"`
-echo $result|sed "s/²Ù×÷:/n/g"|sed "s/)/)n/g"|tr "n" "\n"|sed "s/^ //g"
+echo $result|sed "s/æ“ä½œ:/n/g"|sed "s/)/)n/g"|tr "n" "\n"|sed "s/^ //g"
