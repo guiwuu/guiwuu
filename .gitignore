@@ -1,0 +1,6 @@
+/jworkshop/*/.settings/
+/jworkshop/*/target/
+/jworkshop/*/.project
+/jworkshop/*/.classpath
+*~
+*.log
