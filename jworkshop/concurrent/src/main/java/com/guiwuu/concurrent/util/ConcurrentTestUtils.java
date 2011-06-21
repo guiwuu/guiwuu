@@ -5,18 +5,18 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ConcurrentTestHelper {
+public class ConcurrentTestUtils {
 
-    private static final Logger logger = Logger.getLogger(ConcurrentTestHelper.class.getName());
+    private static final Logger logger = Logger.getLogger(ConcurrentTestUtils.class.getName());
 
-    public static int run(ThreadHelper[] threads) throws Exception {
+    public static int run(ThreadWrapper[] threads) throws Exception {
         int concurrent = threads.length;
         AtomicInteger success = new AtomicInteger();
         CountDownLatch begin = new CountDownLatch(1);
         CountDownLatch end = new CountDownLatch(concurrent);
         long beginTime = System.currentTimeMillis();
 
-        for (ThreadHelper t : threads) {
+        for (ThreadWrapper t : threads) {
             t.setBegin(begin);
             t.setEnd(end);
             t.setSuccess(success);

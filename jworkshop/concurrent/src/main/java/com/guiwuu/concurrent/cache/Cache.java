@@ -13,15 +13,15 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 public @interface Cache {
 
-    CacheProvider provider();
+    CacheProvider provider() default CacheProvider.LOCAL;
 
-    String namespace();
+    String namespace() default "";
 
-    CacheSwap swap();
+    CacheSwap swap() default CacheSwap.STUPID;
 
-    int init();
+    int init() default 0;
 
-    int max();
+    int max() default Integer.MAX_VALUE;
 
-    long expireTime();
+    int expireTime() default 0;
 }

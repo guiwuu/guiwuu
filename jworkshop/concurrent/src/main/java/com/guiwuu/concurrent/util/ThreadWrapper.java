@@ -5,14 +5,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public abstract class ThreadHelper extends Thread {
+public abstract class ThreadWrapper extends Thread {
 
-    private static final Logger logger = Logger.getLogger(ThreadHelper.class.getName());
+    private static final Logger logger = Logger.getLogger(ThreadWrapper.class.getName());
     private AtomicInteger success;
     private CountDownLatch begin;
     private CountDownLatch end;
 
-    public ThreadHelper(String name) {
+    public ThreadWrapper(String name) {
         super(name);
     }
 
