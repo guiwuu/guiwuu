@@ -1,4 +1,4 @@
-package com.guiwuu.concurrent.cache;
+package com.guiwuu.concurrent.jcip;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
@@ -11,9 +11,7 @@ import java.util.concurrent.FutureTask;
 /**
  * High performance and concurrency cache for computing task
  *
- * @author daijun
- * @since 2011-03-06
- * @version 2011-03-06
+ * @author jcip
  */
 public class Memorizer<A, V> implements Computable<A, V> {
 
@@ -46,18 +44,8 @@ public class Memorizer<A, V> implements Computable<A, V> {
             } catch (CancellationException e) {
                 cache.remove(arg, f);
             } catch (ExecutionException e) {
-                throw launderThrowable(e.getCause());
+                throw ExceptionUtils.launderThrowable(e.getCause());
             }
-        }
-    }
-
-    private static RuntimeException launderThrowable(Throwable t) {
-        if (t instanceof RuntimeException) {
-            return (RuntimeException) t;
-        } else if (t instanceof Error) {
-            throw (Error) t;
-        } else {
-            throw new IllegalStateException("Not unchecked", t);
         }
     }
 }

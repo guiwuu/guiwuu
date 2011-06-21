@@ -1,4 +1,4 @@
-package com.guiwuu.concurrent.cra;
+package com.guiwuu.concurrent.jcip.cra;
 
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
@@ -6,7 +6,7 @@ import java.util.concurrent.ExecutorService;
 
 /**
  *
- * @author daijun
+ * @author guiwuu
  */
 public class ConcurrentPuzzleSolver<P, M> {
 

@@ -2,11 +2,12 @@ package com.guiwuu.concurrent.util;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
-import org.apache.log4j.Logger;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public abstract class ThreadHelper extends Thread {
 
-    private static final Logger logger = Logger.getLogger(ThreadHelper.class);
+    private static final Logger logger = Logger.getLogger(ThreadHelper.class.getName());
     private AtomicInteger success;
     private CountDownLatch begin;
     private CountDownLatch end;
@@ -23,7 +24,7 @@ public abstract class ThreadHelper extends Thread {
                 success.incrementAndGet();
             }
         } catch (Exception e) {
-            logger.error(getName() + " exception occurs!", e);
+            logger.log(Level.SEVERE, " exception occurs!", e);
         } finally {
             end.countDown();
         }

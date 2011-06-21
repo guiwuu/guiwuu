@@ -1,11 +1,11 @@
-package com.guiwuu.concurrent.cra;
+package com.guiwuu.concurrent.jcip.cra;
 
 import java.util.LinkedList;
 import java.util.List;
 
 /**
  *
- * @author daijun
+ * @author guiwuu
  */
 public class Node<P, M> {
 

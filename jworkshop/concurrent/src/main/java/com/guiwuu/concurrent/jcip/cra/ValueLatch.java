@@ -1,10 +1,10 @@
-package com.guiwuu.concurrent.cra;
+package com.guiwuu.concurrent.jcip.cra;
 
 import java.util.concurrent.CountDownLatch;
 
 /**
  *
- * @author daijun
+ * @author guiwuu
  */
 public class ValueLatch<T> {
 

@@ -2,12 +2,12 @@ package com.guiwuu.concurrent.util;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
-
-import org.apache.log4j.Logger;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ConcurrentTestHelper {
 
-    private static final Logger logger = Logger.getLogger(ConcurrentTestHelper.class);
+    private static final Logger logger = Logger.getLogger(ConcurrentTestHelper.class.getName());
 
     public static int run(ThreadHelper[] threads) throws Exception {
         int concurrent = threads.length;
@@ -26,7 +26,7 @@ public class ConcurrentTestHelper {
         begin.countDown();
         end.await();
         long endTime = System.currentTimeMillis();
-        logger.warn("cost time: " + (endTime - beginTime) + "ms");
+        logger.log(Level.WARNING, "cost time: {0}ms", (endTime - beginTime));
         return success.get();
     }
 }

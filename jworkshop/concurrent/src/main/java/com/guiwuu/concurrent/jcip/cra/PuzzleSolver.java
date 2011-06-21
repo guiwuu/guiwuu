@@ -1,11 +1,11 @@
-package com.guiwuu.concurrent.cra;
+package com.guiwuu.concurrent.jcip.cra;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  *
- * @author daijun
+ * @author guiwuu
  */
 public class PuzzleSolver<P, M> extends ConcurrentPuzzleSolver<P, M> {
 

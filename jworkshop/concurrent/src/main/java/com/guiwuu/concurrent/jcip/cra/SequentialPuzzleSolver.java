@@ -1,4 +1,4 @@
-package com.guiwuu.concurrent.cra;
+package com.guiwuu.concurrent.jcip.cra;
 
 import java.util.HashSet;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.Set;
 
 /**
  *
- * @author daijun
+ * @author guiwuu
  */
 public class SequentialPuzzleSolver<P, M> {
 
