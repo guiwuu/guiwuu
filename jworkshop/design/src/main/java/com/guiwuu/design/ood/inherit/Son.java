@@ -1,4 +1,4 @@
-package com.guiwuu.design.oo.inherit;
+package com.guiwuu.design.ood.inherit;
 
 public class Son extends Parent {
 
