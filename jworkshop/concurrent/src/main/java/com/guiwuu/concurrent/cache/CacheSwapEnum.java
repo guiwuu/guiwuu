@@ -4,7 +4,7 @@ package com.guiwuu.concurrent.cache;
  *
  * @author guiwuu
  */
-public enum CacheSwap {
+public enum CacheSwapEnum {
 
     STUPID,
     FIFO,

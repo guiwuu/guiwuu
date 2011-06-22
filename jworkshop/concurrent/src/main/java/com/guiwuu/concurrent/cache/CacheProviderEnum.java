@@ -4,7 +4,7 @@ package com.guiwuu.concurrent.cache;
  *
  * @author guiwuu
  */
-public enum CacheProvider {
+public enum CacheProviderEnum {
 
     LOCAL,
     REMOTE

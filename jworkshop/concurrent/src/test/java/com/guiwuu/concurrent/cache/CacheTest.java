@@ -16,6 +16,13 @@ public class CacheTest {
 
     private static final Logger logger = Logger.getLogger(CacheTest.class.getName());
     private static final Random random = new Random();
+    
+    @Test
+    public void testAnnotation() throws Exception{
+        CacheProvider.aop(CostyEcho.class);
+        CostyEcho costyEcho = new CostyEcho();
+        int output = costyEcho.echo(123);
+    }
 
     @Test
     public void testCache() throws Exception {
