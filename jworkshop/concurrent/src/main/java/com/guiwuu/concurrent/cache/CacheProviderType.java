@@ -4,10 +4,9 @@ package com.guiwuu.concurrent.cache;
  *
  * @author guiwuu
  */
-public enum CacheSwapEnum {
+public enum CacheProviderType {
 
-    STUPID,
-    FIFO,
-    LRU,
-
+    LOCAL,
+    REMOTE
+    
 }

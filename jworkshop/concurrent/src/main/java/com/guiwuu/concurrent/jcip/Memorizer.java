@@ -25,7 +25,7 @@ public class Memorizer<A, V> implements Computable<A, V> {
     public V compute(final A arg) throws InterruptedException {
         while (true) {
             Future<V> f = cache.get(arg);
-            if (f == null) {
+            if (f == null) {// cache miss
                 Callable<V> eval = new Callable<V>() {
 
                     public V call() throws InterruptedException {

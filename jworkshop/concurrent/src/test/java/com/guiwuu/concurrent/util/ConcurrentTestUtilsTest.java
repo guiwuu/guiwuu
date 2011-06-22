@@ -1,6 +1,5 @@
 package com.guiwuu.concurrent.util;
 
-import com.guiwuu.concurrent.cache.CacheProvider;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.Test;
@@ -15,9 +14,9 @@ public class ConcurrentTestUtilsTest {
     private static final Logger logger = Logger.getLogger(ConcurrentTestUtilsTest.class.getName());
 
     @Test
-    public void testCache() throws Exception {
+    public void testConcurrent() throws Exception {
         int concurrent = 10;
-        logger.log(Level.CONFIG, "%s threads running concurrently...", concurrent);
+        logger.log(Level.WARNING, "{0} threads running concurrently...", concurrent);
         final ThreadWrapper[] threads = new ThreadWrapper[concurrent];
         for (int i = 0; i < concurrent; i++) {
             threads[i] = new ThreadWrapper("test run thread") {

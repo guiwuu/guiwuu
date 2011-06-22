@@ -13,11 +13,11 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 public @interface Cache {
 
-    CacheProviderEnum provider() default CacheProviderEnum.LOCAL;
+    CacheProviderType provider() default CacheProviderType.LOCAL;
 
     String namespace() default "";
 
-    CacheSwapEnum swap() default CacheSwapEnum.STUPID;
+    CacheSwapPolicy swap() default CacheSwapPolicy.STUPID;
 
     int init() default 0;
 
