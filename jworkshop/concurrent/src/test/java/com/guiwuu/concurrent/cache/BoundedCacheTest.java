@@ -14,9 +14,9 @@ import static org.junit.Assert.*;
  *
  * @author guiwuu
  */
-public class CacheTest {
+public class BoundedCacheTest {
 
-    private static final Logger logger = Logger.getLogger(CacheTest.class.getName());
+    private static final Logger logger = Logger.getLogger(BoundedCacheTest.class.getName());
     private static final Random random = new Random();
 
     @Test
@@ -41,10 +41,10 @@ public class CacheTest {
     }
 
     @Test
-    public void testCache() throws Exception {
+    public void testDummyCache() throws Exception {
         int concurrent = 1000;
         final CostyEcho costyEcho = new CostyEcho();
-        final BoundedCache<Integer, Integer> cache = new BoundedCache<Integer, Integer>();
+        final BoundedCache<Integer, Integer> cache = new DummyCache<Integer, Integer>();
         logger.log(Level.WARNING, "{0} cache threads running concurrently...", concurrent);
         final ThreadWrapper[] threads = new ThreadWrapper[concurrent];
         for (int i = 0; i < concurrent; i++) {
