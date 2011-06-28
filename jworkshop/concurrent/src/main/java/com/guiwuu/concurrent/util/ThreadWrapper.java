@@ -11,9 +11,11 @@ public abstract class ThreadWrapper extends Thread {
     private AtomicInteger success;
     private CountDownLatch begin;
     private CountDownLatch end;
+    protected int num;
 
-    public ThreadWrapper(String name) {
+    public ThreadWrapper(String name, int num) {
         super(name);
+        this.num = num;
     }
 
     @Override
