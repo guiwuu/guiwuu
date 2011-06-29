@@ -24,7 +24,7 @@ public class ComputingCacheTest {
     @BeforeClass
     public static void setUpClass() throws Exception {
         for (int i = 0; i < inputs.length; i++) {
-            inputs[i] = new Random().nextInt(25);
+            inputs[i] = random.nextInt(25);
         }
     }
 
@@ -38,10 +38,13 @@ public class ComputingCacheTest {
 
                 @Override
                 protected boolean runTask() throws Exception {
+                    boolean result = true;
                     for (int j = 0; j < loop; j++) {
-                        costyEcho.echo(inputs[num * loop + j]);
+                        if (costyEcho.echo(inputs[num * loop + j]) == null) {
+                            result = false;
+                        }
                     }
-                    return true;
+                    return result;
                 }
             };
         }
@@ -66,10 +69,13 @@ public class ComputingCacheTest {
 
                 @Override
                 protected boolean runTask() throws Exception {
+                    boolean result = true;
                     for (int j = 0; j < loop; j++) {
-                        cache.compute(inputs[num * loop + j]);
+                        if (cache.compute(inputs[num * loop + j]) == null) {
+                            result = false;
+                        }
                     }
-                    return true;
+                    return result;
                 }
             };
         }
@@ -95,10 +101,13 @@ public class ComputingCacheTest {
 
                 @Override
                 protected boolean runTask() throws Exception {
+                    boolean result = true;
                     for (int j = 0; j < loop; j++) {
-                        cache.compute(inputs[num * loop + j]);
+                        if (cache.compute(inputs[num * loop + j]) == null) {
+                            result = false;
+                        };
                     }
-                    return true;
+                    return result;
                 }
             };
         }
@@ -110,7 +119,7 @@ public class ComputingCacheTest {
     static class CostyEcho {
 
         @Cache
-        synchronized int echo(int input) throws Exception {
+        synchronized Integer echo(Integer input) throws Exception {
             Thread.sleep(6);
             return input;
         }
