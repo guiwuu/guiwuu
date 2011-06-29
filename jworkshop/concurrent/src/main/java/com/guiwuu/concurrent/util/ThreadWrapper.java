@@ -12,6 +12,10 @@ public abstract class ThreadWrapper extends Thread {
     private CountDownLatch begin;
     private CountDownLatch end;
     protected int num;
+    
+    public ThreadWrapper(String name) {
+        super(name);
+    }
 
     public ThreadWrapper(String name, int num) {
         super(name);

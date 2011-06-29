@@ -30,6 +30,7 @@ public abstract class AbstractComputingCache<K, V> implements ComputingCache<K, 
         this.c = c;
     }
 
+    @Override
     public V compute(final K input) throws Exception {
         access.incrementAndGet();
 
@@ -42,6 +43,7 @@ public abstract class AbstractComputingCache<K, V> implements ComputingCache<K, 
             if (f == null) {
                 FutureTask<V> ft = new FutureTask<V>(new Callable<V>() {
 
+                    @Override
                     public V call() throws Exception {
                         return c.compute(input);
                     }
@@ -71,32 +73,40 @@ public abstract class AbstractComputingCache<K, V> implements ComputingCache<K, 
         }
     }
 
+    @Override
     public void remove(K input) {
         storage.remove(input);
     }
 
+    @Override
     public abstract void swap();
 
+    @Override
     public int size() {
         return storage.size();
     }
 
+    @Override
     public void clear() {
         storage.clear();
     }
 
+    @Override
     public int getMaxSize() {
         return maxSize;
     }
 
+    @Override
     public void setMaxSize(int maxSize) {
         this.maxSize = maxSize;
     }
 
+    @Override
     public int getSwapSize() {
         return swapSize;
     }
 
+    @Override
     public void setSwapSize(int swapSize) {
         this.swapSize = swapSize;
     }
@@ -106,7 +116,7 @@ public abstract class AbstractComputingCache<K, V> implements ComputingCache<K, 
         BigDecimal accessNum = BigDecimal.valueOf(access.get());
         BigDecimal failNum = BigDecimal.valueOf(fail.get());
         BigDecimal successNum = accessNum.subtract(failNum);
-        BigDecimal ratio = successNum.divide(accessNum).setScale(4, RoundingMode.DOWN);
+        BigDecimal ratio = successNum.divide(accessNum, 4, RoundingMode.DOWN);
         Object[] params = {maxSize, accessNum, successNum, failNum, ratio};
         return String.format("max: %s, access: %s, success: %s, fail: %s, ratio: %s", (Object[]) params);
     }
