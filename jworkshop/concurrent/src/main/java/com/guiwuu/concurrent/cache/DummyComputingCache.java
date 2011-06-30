@@ -18,7 +18,7 @@ public class DummyComputingCache<K, V> extends AbstractComputingCache<K, V> {
         Iterator<K> it = storage.keySet().iterator();
         while(swap < swapSize && size() + swapSize > maxSize && it.hasNext()){
             swap++;
-            remove(it.next());
+            removeFromStorage(it.next());
         }
     }
 }

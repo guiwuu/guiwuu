@@ -8,7 +8,7 @@ public interface ComputingCache<K, V> {
 
     public V compute(final K key) throws Exception;
 
-    public void remove(K key);
+    public void removeFromStorage(K key);
 
     public void swap();
 

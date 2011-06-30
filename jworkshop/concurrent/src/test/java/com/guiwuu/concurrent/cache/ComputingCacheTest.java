@@ -34,7 +34,7 @@ public class ComputingCacheTest {
         logger.log(Level.WARNING, "{0} no cache threads running concurrently...", concurrent);
         final ThreadWrapper[] threads = new ThreadWrapper[concurrent];
         for (int i = 0; i < concurrent; i++) {
-            threads[i] = new ThreadWrapper("no cache thread", i) {
+            threads[i] = new LoopThreadWrapper("no cache thread", i) {
 
                 @Override
                 protected boolean runTask() throws Exception {
@@ -56,6 +56,7 @@ public class ComputingCacheTest {
     public void testDummyCache() throws Exception {
         final ComputingCache<Integer, Integer> cache = new DummyComputingCache<Integer, Integer>(new Computable<Integer, Integer>() {
 
+            @Override
             public Integer compute(Integer input) throws Exception {
                 return costyEcho.echo(input);
             }
@@ -65,7 +66,7 @@ public class ComputingCacheTest {
         logger.log(Level.WARNING, "{0} dummy cache threads running concurrently...", concurrent);
         final ThreadWrapper[] threads = new ThreadWrapper[concurrent];
         for (int i = 0; i < concurrent; i++) {
-            threads[i] = new ThreadWrapper("dummy cache thread", i) {
+            threads[i] = new LoopThreadWrapper("dummy cache thread", i) {
 
                 @Override
                 protected boolean runTask() throws Exception {
@@ -88,6 +89,7 @@ public class ComputingCacheTest {
     public void testFifoCache() throws Exception {
         final ComputingCache<Integer, Integer> cache = new FifoComputingCache<Integer, Integer>(new Computable<Integer, Integer>() {
 
+            @Override
             public Integer compute(Integer input) throws Exception {
                 return costyEcho.echo(input);
             }
@@ -97,7 +99,7 @@ public class ComputingCacheTest {
         logger.log(Level.WARNING, "{0} fifo cache threads running concurrently...", concurrent);
         final ThreadWrapper[] threads = new ThreadWrapper[concurrent];
         for (int i = 0; i < concurrent; i++) {
-            threads[i] = new ThreadWrapper("fifo cache thread", i) {
+            threads[i] = new LoopThreadWrapper("fifo cache thread", i) {
 
                 @Override
                 protected boolean runTask() throws Exception {
@@ -114,6 +116,16 @@ public class ComputingCacheTest {
         int result = ConcurrentTestUtils.run(threads);
         logger.log(Level.WARNING, cache.toString());
         assertEquals(concurrent, result);
+    }
+
+    abstract class LoopThreadWrapper extends ThreadWrapper {
+
+        protected int num;
+
+        public LoopThreadWrapper(String name, int num) {
+            super(name);
+            this.num = num;
+        }
     }
 
     static class CostyEcho {
