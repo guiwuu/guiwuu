@@ -11,6 +11,7 @@ public class FinallyPullzerTest {
 
     @Test
     public void test() {
-        assertEquals(1, FinallyPuzller.call());
+        assertEquals(1, FinallyPuzller.returnDirectly());
+        assertEquals(1, FinallyPuzller.returnBeforeFinally());
     }
 }
