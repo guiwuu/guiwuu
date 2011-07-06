@@ -27,7 +27,8 @@ public class ConcurrentTestUtils {
         begin.countDown();
         end.await();
         long endTime = System.currentTimeMillis();
-        logger.log(Level.WARNING, "cost time: {0}ms", (endTime - beginTime));
+        long totalCost = endTime - beginTime;
+        logger.log(Level.WARNING, "total cost: {0}ms", totalCost);
         return success.get();
     }
 
@@ -50,7 +51,8 @@ public class ConcurrentTestUtils {
         begin.countDown();
         end.await();
         long endTime = System.currentTimeMillis();
-        logger.log(Level.WARNING, "cost time: {0}ms", (endTime - beginTime));
+        long totalCost = endTime - beginTime;
+        logger.log(Level.WARNING, "total cost: {0}ms", totalCost);
         return success.get();
     }
 }

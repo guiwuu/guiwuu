@@ -1,6 +1,5 @@
 package com.guiwuu.concurrent.cache;
 
-import java.util.Iterator;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 

@@ -117,7 +117,7 @@ public abstract class AbstractComputingCache<K, V> implements ComputingCache<K, 
         BigDecimal failNum = BigDecimal.valueOf(fail.get());
         BigDecimal successNum = accessNum.subtract(failNum);
         BigDecimal ratio = successNum.divide(accessNum, 4, RoundingMode.DOWN);
-        Object[] params = {size(), maxSize, accessNum, successNum, failNum, ratio};
-        return String.format("size: %s, max: %s, access: %s, success: %s, fail: %s, ratio: %s", (Object[]) params);
+        Object[] params = {maxSize, swapSize, size(), accessNum, successNum, failNum, ratio};
+        return String.format("max: %s, swap: %s, size: %s, access: %s, success: %s, fail: %s, ratio: %s", (Object[]) params);
     }
 }
