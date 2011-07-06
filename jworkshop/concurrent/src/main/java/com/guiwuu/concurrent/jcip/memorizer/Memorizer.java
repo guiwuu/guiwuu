@@ -1,4 +1,4 @@
-package com.guiwuu.concurrent.jcip;
+package com.guiwuu.concurrent.jcip.memorizer;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;

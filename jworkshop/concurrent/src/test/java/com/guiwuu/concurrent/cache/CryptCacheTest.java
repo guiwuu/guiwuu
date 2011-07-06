@@ -2,7 +2,7 @@ package com.guiwuu.concurrent.cache;
 
 import java.io.BufferedReader;
 import com.guiwuu.concurrent.util.ConcurrentTestUtils;
-import com.guiwuu.concurrent.util.ThreadWrapper;
+import com.guiwuu.concurrent.util.BatchExecuteThread;
 import java.io.FileReader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -47,9 +47,9 @@ public class CryptCacheTest {
     @Ignore
     public void testNoCacheDecrypt() throws Exception {
         logger.log(Level.WARNING, "{0} no cache threads decrypting concurrently...", concurrent);
-        final ThreadWrapper[] threads = new ThreadWrapper[concurrent];
+        final BatchExecuteThread[] threads = new BatchExecuteThread[concurrent];
         for (int i = 0; i < concurrent; i++) {
-            threads[i] = new ThreadWrapper("no cache decrypt thread") {
+            threads[i] = new BatchExecuteThread("no cache decrypt thread") {
 
                 @Override
                 protected boolean runTask() throws Exception {
@@ -73,7 +73,7 @@ public class CryptCacheTest {
     @Test
     public void testDummyCacheDecrypt() throws Exception {
         logger.log(Level.WARNING, "{0} dummy cache threads decrypting concurrently...", concurrent);
-        final ThreadWrapper[] threads = new ThreadWrapper[concurrent];
+        final BatchExecuteThread[] threads = new BatchExecuteThread[concurrent];
         final ComputingCache<String, String> cache = new DummyComputingCache<String, String>(decryptCompute);
         cache.setMaxSize(10000);
         cache.setSwapSize(1000);
@@ -88,7 +88,7 @@ public class CryptCacheTest {
     @Test
     public void testFifoCacheDecrypt() throws Exception {
         logger.log(Level.WARNING, "{0} fifo cache threads decrypting concurrently...", concurrent);
-        final ThreadWrapper[] threads = new ThreadWrapper[concurrent];
+        final BatchExecuteThread[] threads = new BatchExecuteThread[concurrent];
         final ComputingCache<String, String> cache = new FifoComputingCache<String, String>(decryptCompute);
         cache.setMaxSize(10000);
         cache.setSwapSize(1000);
@@ -103,7 +103,7 @@ public class CryptCacheTest {
     @Test
     public void testLruCacheDecrypt() throws Exception {
         logger.log(Level.WARNING, "{0} lru cache threads decrypting concurrently...", concurrent);
-        final ThreadWrapper[] threads = new ThreadWrapper[concurrent];
+        final BatchExecuteThread[] threads = new BatchExecuteThread[concurrent];
         final ComputingCache<String, String> cache = new LruComputingCache<String, String>(decryptCompute);
         cache.setMaxSize(10000);
         cache.setSwapSize(1000);
@@ -128,7 +128,7 @@ public class CryptCacheTest {
         }
     }
 
-    class DecryptThreadWrapper extends ThreadWrapper {
+    class DecryptThreadWrapper extends BatchExecuteThread {
 
         private ComputingCache c;
 

@@ -14,12 +14,12 @@ public class ConcurrentTestUtilsTest {
     private static final Logger logger = Logger.getLogger(ConcurrentTestUtilsTest.class.getName());
 
     @Test
-    public void testConcurrent() throws Exception {
+    public void testConcurrentExecuteBatch() throws Exception {
         int concurrent = 10;
         logger.log(Level.WARNING, "{0} threads running concurrently...", concurrent);
-        final ThreadWrapper[] threads = new ThreadWrapper[concurrent];
+        final BatchExecuteThread[] threads = new BatchExecuteThread[concurrent];
         for (int i = 0; i < concurrent; i++) {
-            threads[i] = new ThreadWrapper("test run thread") {
+            threads[i] = new BatchExecuteThread("batch thread") {
 
                 @Override
                 protected boolean runTask() throws Exception {
@@ -29,5 +29,24 @@ public class ConcurrentTestUtilsTest {
         }
         int result = ConcurrentTestUtils.run(threads);
         assertEquals(concurrent, result);
+    }
+
+    @Test
+    public void testConcurrentExecuteCyclic() throws Exception {
+        int concurrent = 10;
+        int loop = 10;
+        logger.log(Level.WARNING, "{0} threads running concurrently...", concurrent);
+        final CyclicExecuteThread[] threads = new CyclicExecuteThread[concurrent];
+        for (int i = 0; i < concurrent; i++) {
+            threads[i] = new CyclicExecuteThread("cyclic thread") {
+
+                @Override
+                protected boolean runTask() throws Exception {
+                    return true;
+                }
+            };
+        }
+        int result = ConcurrentTestUtils.run(threads, loop);
+        assertEquals(concurrent * loop, result);
     }
 }

@@ -1,7 +1,7 @@
 package com.guiwuu.concurrent.cache;
 
 import com.guiwuu.concurrent.util.ConcurrentTestUtils;
-import com.guiwuu.concurrent.util.ThreadWrapper;
+import com.guiwuu.concurrent.util.BatchExecuteThread;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -32,7 +32,7 @@ public class ComputingCacheTest {
     @Ignore
     public void testNoCache() throws Exception {
         logger.log(Level.WARNING, "{0} no cache threads running concurrently...", concurrent);
-        final ThreadWrapper[] threads = new ThreadWrapper[concurrent];
+        final BatchExecuteThread[] threads = new BatchExecuteThread[concurrent];
         for (int i = 0; i < concurrent; i++) {
             threads[i] = new LoopThreadWrapper("no cache thread", i) {
 
@@ -64,7 +64,7 @@ public class ComputingCacheTest {
         cache.setMaxSize(20);
         cache.setSwapSize(5);
         logger.log(Level.WARNING, "{0} dummy cache threads running concurrently...", concurrent);
-        final ThreadWrapper[] threads = new ThreadWrapper[concurrent];
+        final BatchExecuteThread[] threads = new BatchExecuteThread[concurrent];
         for (int i = 0; i < concurrent; i++) {
             threads[i] = new LoopThreadWrapper("dummy cache thread", i) {
 
@@ -97,7 +97,7 @@ public class ComputingCacheTest {
         cache.setMaxSize(20);
         cache.setSwapSize(5);
         logger.log(Level.WARNING, "{0} fifo cache threads running concurrently...", concurrent);
-        final ThreadWrapper[] threads = new ThreadWrapper[concurrent];
+        final BatchExecuteThread[] threads = new BatchExecuteThread[concurrent];
         for (int i = 0; i < concurrent; i++) {
             threads[i] = new LoopThreadWrapper("fifo cache thread", i) {
 
@@ -118,7 +118,7 @@ public class ComputingCacheTest {
         assertEquals(concurrent, result);
     }
 
-    abstract class LoopThreadWrapper extends ThreadWrapper {
+    abstract class LoopThreadWrapper extends BatchExecuteThread {
 
         protected int num;
 
