@@ -1,13 +1,10 @@
-package com.guiwuu.util.sizeof;
+package com.guiwuu.jvm.gc;
 
 import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.junit.Test;
-
-import com.guiwuu.util.gc.GcUtil;
-import com.guiwuu.util.gc.SizeOf;
 
 public class GcUtilTest {
 

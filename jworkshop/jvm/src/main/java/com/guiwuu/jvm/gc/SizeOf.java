@@ -1,4 +1,4 @@
-package com.guiwuu.util.gc;
+package com.guiwuu.jvm.gc;
 
 public interface SizeOf {
 
