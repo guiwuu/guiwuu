@@ -2,5 +2,6 @@
 /jworkshop/*/target/
 /jworkshop/*/.project
 /jworkshop/*/.classpath
+/jworkshop/*/nbactions.xml
 *~
 *.log
