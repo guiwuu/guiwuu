@@ -10,7 +10,14 @@ public class ConcurrentTestUtils {
 
     private static final Logger logger = Logger.getLogger(ConcurrentTestUtils.class.getName());
 
-    public static int run(BatchExecuteThread[] threads) throws Exception {
+    /**
+     * please make it run hot enough in jvm by yourself, or try AbstractPerformanceTest
+     * 
+     * @param threads
+     * @return
+     * @throws Exception 
+     */
+    public static boolean run(BatchExecuteThread[] threads) throws Exception {
         int concurrent = threads.length;
         AtomicInteger success = new AtomicInteger();
         CountDownLatch begin = new CountDownLatch(1);
@@ -29,10 +36,17 @@ public class ConcurrentTestUtils {
         long endTime = System.currentTimeMillis();
         long totalCost = endTime - beginTime;
         logger.log(Level.WARNING, "total cost: {0}ms", totalCost);
-        return success.get();
+        return success.get() == concurrent;
     }
 
-    public static int run(CyclicExecuteThread[] threads, int loop) throws Exception {
+    /**
+     * please make it run hot enough in jvm by yourself, or try AbstractPerformanceTest
+     * 
+     * @param threads
+     * @param loop
+     * @return 
+     */
+    public static boolean run(CyclicExecuteThread[] threads, int loop) throws Exception {
         int concurrent = threads.length;
         AtomicInteger success = new AtomicInteger();
         CountDownLatch begin = new CountDownLatch(1);
@@ -53,6 +67,6 @@ public class ConcurrentTestUtils {
         long endTime = System.currentTimeMillis();
         long totalCost = endTime - beginTime;
         logger.log(Level.WARNING, "total cost: {0}ms", totalCost);
-        return success.get();
+        return success.get() == concurrent * loop;
     }
 }

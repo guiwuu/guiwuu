@@ -1,5 +1,6 @@
 package com.guiwuu.concurrent.util;
 
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.Test;
@@ -27,8 +28,7 @@ public class ConcurrentTestUtilsTest {
                 }
             };
         }
-        int result = ConcurrentTestUtils.run(threads);
-        assertEquals(concurrent, result);
+        assertTrue(ConcurrentTestUtils.run(threads));
     }
 
     @Test
@@ -46,7 +46,21 @@ public class ConcurrentTestUtilsTest {
                 }
             };
         }
-        int result = ConcurrentTestUtils.run(threads, loop);
-        assertEquals(concurrent * loop, result);
+        assertTrue(ConcurrentTestUtils.run(threads, loop));
+    }
+    
+    @Test
+    public void testAbstractConcurrentTest() throws Exception{
+        AbstractConcurrentTest act = new AbstractConcurrentTest(){
+            private AtomicInteger i = new AtomicInteger();
+
+            @Override
+            public boolean doTest() throws Exception {
+                System.out.println(i.incrementAndGet());
+                return true;
+            }
+            
+        };
+        assertTrue(act.run(10, 10));
     }
 }

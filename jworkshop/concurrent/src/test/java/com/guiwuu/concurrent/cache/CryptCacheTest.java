@@ -17,7 +17,7 @@ public class CryptCacheTest {
 
     private static final Logger logger = Logger.getLogger(CryptCacheTest.class.getName());
     private static final int concurrent = 2;
-    private static final int maxSize = 100000;
+    private static final int maxSize = 10000;
     private static final int swapSize = 1000;
     private static final Crypt crypt = new Crypt();
     private static BufferedReader encryptFile;
@@ -81,8 +81,7 @@ public class CryptCacheTest {
                 }
             };
         }
-        int result = ConcurrentTestUtils.run(threads);
-        assertEquals(concurrent, result);
+        assertTrue(ConcurrentTestUtils.run(threads));
     }
 
     @Test
@@ -95,9 +94,8 @@ public class CryptCacheTest {
         for (int i = 0; i < concurrent; i++) {
             threads[i] = new DecryptThreadWrapper("dummy cache decrypt thread", cache);
         }
-        int result = ConcurrentTestUtils.run(threads);
+        assertTrue(ConcurrentTestUtils.run(threads));
         logger.log(Level.WARNING, cache.toString());
-        assertEquals(concurrent, result);
     }
 
     @Test
@@ -110,13 +108,11 @@ public class CryptCacheTest {
         for (int i = 0; i < concurrent; i++) {
             threads[i] = new DecryptThreadWrapper("fifo cache decrypt thread", cache);
         }
-        int result = ConcurrentTestUtils.run(threads);
+        assertTrue(ConcurrentTestUtils.run(threads));
         logger.log(Level.WARNING, cache.toString());
-        assertEquals(concurrent, result);
     }
 
     @Test
-    @Ignore
     public void testLruCacheDecrypt() throws Exception {
         logger.log(Level.WARNING, "{0} lru cache threads decrypting concurrently...", concurrent);
         final BatchExecuteThread[] threads = new BatchExecuteThread[concurrent];
@@ -126,9 +122,8 @@ public class CryptCacheTest {
         for (int i = 0; i < concurrent; i++) {
             threads[i] = new DecryptThreadWrapper("lru cache decrypt thread", cache);
         }
-        int result = ConcurrentTestUtils.run(threads);
+        assertTrue(ConcurrentTestUtils.run(threads));
         logger.log(Level.WARNING, cache.toString());
-        assertEquals(concurrent, result);
     }
 
     @Test
@@ -154,8 +149,7 @@ public class CryptCacheTest {
                 }
             };
         }
-        int result = ConcurrentTestUtils.run(threads);
-        assertEquals(concurrent, result);
+        assertTrue(ConcurrentTestUtils.run(threads));
     }
 
     @Test
@@ -168,9 +162,8 @@ public class CryptCacheTest {
         for (int i = 0; i < concurrent; i++) {
             threads[i] = new EncryptThreadWrapper("dummy cache encrypt thread", cache);
         }
-        int result = ConcurrentTestUtils.run(threads);
+        assertTrue(ConcurrentTestUtils.run(threads));
         logger.log(Level.WARNING, cache.toString());
-        assertEquals(concurrent, result);
     }
 
     @Test
@@ -183,13 +176,11 @@ public class CryptCacheTest {
         for (int i = 0; i < concurrent; i++) {
             threads[i] = new EncryptThreadWrapper("fifo cache encrypt thread", cache);
         }
-        int result = ConcurrentTestUtils.run(threads);
+        assertTrue(ConcurrentTestUtils.run(threads));
         logger.log(Level.WARNING, cache.toString());
-        assertEquals(concurrent, result);
     }
 
     @Test
-    @Ignore
     public void testLruCacheEncrypt() throws Exception {
         logger.log(Level.WARNING, "{0} lru cache threads decrypting concurrently...", concurrent);
         final BatchExecuteThread[] threads = new BatchExecuteThread[concurrent];
@@ -199,9 +190,8 @@ public class CryptCacheTest {
         for (int i = 0; i < concurrent; i++) {
             threads[i] = new EncryptThreadWrapper("lru cache encrypt thread", cache);
         }
-        int result = ConcurrentTestUtils.run(threads);
+        assertTrue(ConcurrentTestUtils.run(threads));
         logger.log(Level.WARNING, cache.toString());
-        assertEquals(concurrent, result);
     }
 
     static class Crypt {

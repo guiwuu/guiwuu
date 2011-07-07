@@ -48,8 +48,7 @@ public class ComputingCacheTest {
                 }
             };
         }
-        int result = ConcurrentTestUtils.run(threads);
-        assertEquals(concurrent, result);
+        assertTrue(ConcurrentTestUtils.run(threads));
     }
 
     @Test
@@ -80,9 +79,8 @@ public class ComputingCacheTest {
                 }
             };
         }
-        int result = ConcurrentTestUtils.run(threads);
+        assertTrue(ConcurrentTestUtils.run(threads));
         logger.log(Level.WARNING, cache.toString());
-        assertEquals(concurrent, result);
     }
 
     @Test
@@ -113,9 +111,8 @@ public class ComputingCacheTest {
                 }
             };
         }
-        int result = ConcurrentTestUtils.run(threads);
+        assertTrue(ConcurrentTestUtils.run(threads));
         logger.log(Level.WARNING, cache.toString());
-        assertEquals(concurrent, result);
     }
 
     abstract class LoopThreadWrapper extends BatchExecuteThread {
