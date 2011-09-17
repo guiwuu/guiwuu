@@ -1,0 +1,30 @@
+@CHARSET "UTF-8";
+.order_state{color:#555;font-size:12px;padding:4px 0 0 15px;background:#f1f1f1}
+.order_state input{cursor:pointer;margin:0 3px;padding:2px 3px}
+.order_tab{text-align:right;background:#f1f1f1;padding:0 10% 2px 0}
+.order_tab a{display:inline-block;border:1px solid #aaa;padding:0 4px;color:#666;text-decoration:none;height:24px;margin:0 2px;background:#f1f1f1}
+.order_tab a.order_tab_on{color:#000;border:1px solid #666;background:#e7e7e7}
+.order_content{background:#f7f7f7;padding:5px 0 5px 0}
+.order_content table{margin:10px auto;width:80%;border-collapse:collapse;border:1px solid #ddf}
+.order_content table th{border:1px solid #ddf;height:26px;white-space:no-warp;background:url(../images/eshopGrid/grid_other.gif) 0 -22px repeat-x}
+.order_content table .right{text-align:right;color:#449;width:6em}
+.order_content table td{border:1px solid #ddf;padding:2px 3px;background:#ecf1f5}
+.order_content .order_baseInfo{}
+.order_content .order_goods{text-align:center;display:none}
+.order_content .order_tuikuan{text-align:center;display:none}
+.order_content .order_fatuihuo{text-align:center;display:none}
+.order_content .order_youhui{text-align:center;display:none}
+.order_content .order_beizhu{text-align:center;display:none}
+.order_content .order_rizhi{text-align:center;display:none}
+.iroaru{border-collapse:collapse;border:1px solid #ddf}
+.iroaru th{height:26px;white-space:no-warp;background:url(../images/eshopGrid/grid_other.gif) 0 -22px repeat-x}
+.iroaru td{background:#ecf1f5;padding:0 5px}
+.order_content textarea{width:80%;height:200px}
+.order_content .table_title{font-size:14px;font-weight:bold;margin:5px auto 0 auto;border:1px solid #eeeef7;width:80%}
+.order_mask{position:absolute;width:100%;height:100%;background:#fff;opacity:0.4;filter:alpha(opacity=40)}
+.order_win{position:absolute;border:1px solid #4882c3;width:70%;left:10%;top:10%;background:#f9f9f9;padding:0 0 15px 0;font-size:12px}
+.order_win .winTitle{font-size:14px;font-weight:bold;text-align:center;background:#4882c3;line-height:28px;color:#fff;cursor:move}
+.order_win table{display:block;margin:10px auto;border-collapse:collapse;border:1px solid #bbd}
+.order_win td,.order_win th{border:1px solid #bbd;line-height:24px;padding:2px 5px}
+.order_win th{font-weight:normal;text-align:right;color:#449}
+.order_win .head th{text-align:center}

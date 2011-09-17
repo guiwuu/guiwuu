@@ -1,0 +1,16 @@
+/* CSS Document */
+/**/
+.searchList_pic{width:914px; height:34px; background:url(../images/search_box_top.gif) no-repeat;margin:10px auto}
+
+.searchList_table{border-collapse:collapse; border-bottom:1px solid #d5d5d5; margin:0 auto 10px; vertical-align:middle; text-align:left; line-height:20px}
+.searchList_t1{ width:160px;padding:10px;text-align:center}
+.searchList_t2{ width:400px;padding:0 0 0 10px}
+.searchList_t2 a{color:#000}
+.searchList_t3{ width:130px; padding:0 0 0 10px}
+.searchList_t4{ width:80px;padding:0 0 0 10px; text-align:center}
+.searchList_t5{ width:80px;padding:0 0 0 10px; text-align:center}
+.searchList_tx1{color:#600; font-weight:bold; font-size:14px}
+.searchList_tx2{color:#000; font-size:12px}
+.searchList_link{ text-align:center; margin:0 0 50px 0}
+.searchList_link a{color:#000; font-weight:bold}
+.searchList_link span{color:#660000; font-weight:bold; font-size:14px}

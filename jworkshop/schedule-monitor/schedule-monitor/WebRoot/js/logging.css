@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+/*¿ìËÙ×¢²á*/
+.logging_kszc{ width:625px; height:114px; background:url(../images/title_quick.gif) no-repeat; margin:0 auto}
+.logging_boardtop{width:615px;height:57px; background:url(../images/board_top.gif) no-repeat; margin:0 auto}
+.logging_content{width:615px; background:url(../images/board_bg.gif) repeat-y;margin:0 auto; padding:20px 0}
+	.logging_content table{ width:80%;margin:0 60px; line-height:30px}
+	.logging_content .t1{text-align:right}
+	.logging_content .t2{text-align:left}
+	.logging_content .t3{text-align:center}
+	.logging_content .input1{border:none; background:none}
+	.logging_content .input2{ width:120px;border:1px solid #999; background:#fff}
+	.logging_content .inpute{width:200px;border:1px solid #999; background:#fff}
+	.logging_content .input3{ width:103px;height:26px; background:url(../images/m_button_02.gif); border:none; cursor:pointer}
+.logging_bottom{width:615px; height:17px; background:url(../images/board_bottom.gif) no-repeat;margin:0 auto 20px auto}
+
+/*µÇÂ½*/
+.login_loginpic{width:625px;height:116px; background:url(../images/log-in.gif);margin:0 auto}
+.login_boardtop{width:615px;height:57px; background:url(../images/board_login_top.gif) no-repeat; margin:0 auto}
+.input4{ width:74px;height:46px; background:url(../images/login_button.gif);border:none;cursor:pointer}
+.t4{width:200px}
+.spacepic{ padding:50px 0 0 60px}
+.input5{ width:120px; height:32px; background:url(../images/login_right_02.gif);border:none;cursor:pointer}
+.input6{ width:120px; height:34px; background:url(../images/login_right_03.gif);border:none;cursor:pointer}

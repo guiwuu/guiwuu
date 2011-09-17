@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-autowire="byName">
+
+	<import resource="db4MySql.xml" />
+
+	<bean id="webServiceClient" class="control.WebServiceClient">
+		<property name="scheduleMonitorDAO">
+			<ref bean="scheduleMonitorDAO"/>
+		</property>
+	</bean>
+	<bean id="scheduleMonitorDAO" class="control.dao.ScheduleMonitorDAO">
+		<property name="dataSource">
+			<ref bean="schedule_base" />
+		</property>
+		<property name="tableMap">
+			<map>
+				<entry key="pamirs_schedule_queue">
+					<value>PAMIRS_SCHEDULE_QUEUE</value>
+				</entry>
+				<entry key="pamirs_schedule_server">
+					<value>PAMIRS_SCHEDULE_SERVER</value>
+				</entry>
+				<entry key="pamirs_schedule_tasktype">
+					<value>PAMIRS_SCHEDULE_TASKTYPE</value>
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+</beans>

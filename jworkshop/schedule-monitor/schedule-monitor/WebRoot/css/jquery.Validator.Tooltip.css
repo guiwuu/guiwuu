@@ -1,0 +1,28 @@
+.tooltipinputerr
+{
+	/*padding: 2px 0 2px 18px;*/
+	border: solid 1px red!important;
+	/*background: #ffff99 url(/images/jquery.Validator.exclamation.gif) no-repeat 2px center;*/
+}
+.tooltipinputok
+{
+	/*padding: 2px 0 2px 18px;*/
+	border: solid 1px green!important;
+	/*background: url(/images/jquery.Validator.accept.gif) no-repeat 2px center;*/
+}
+.tooltipshowpanel
+{
+	z-index: auto;
+	display: none;
+	position:absolute;
+	width: 276px;
+	height: 35px;
+	overflow: hidden;
+	text-indent: 5px;
+	line-height: 40px;
+	font-size: 12px;
+	font-family: Arial;
+	background: url(../images/jquery.Validator.tooltop.gif) no-repeat left top;
+	opacity:0.9;
+    filter: alpha(opacity=90);
+}

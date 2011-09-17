@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-autowire="byName">
+	<bean
+		class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+
+	<import resource="db4MySql.xml" />
+	<import resource="mbean-config.xml" />
+	<import resource="schedule-ws-server.xml" />
+	<import resource="schedule.xml" />
+</beans>

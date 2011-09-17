@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN" "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+  <tlib-version>2.2.3</tlib-version>
+  <jsp-version>1.2</jsp-version>
+  <short-name>pin</short-name>
+  <uri>/pin-tags</uri>
+  <display-name>"pin Tags"</display-name>
+  <description><![CDATA["To make it easier to access dynamic data;
+                    the Apache Struts framework includes a library of custom tags.
+                    The tags interact with the framework's validation and internationalization features;
+                    to ensure that input is correct and output is localized.
+                    The Struts Tags can be used with JSP FreeMarker or Velocity."]]></description>
+  <tag>
+    <name>pageScript</name>
+    <tag-class>tag.PageScriptTag</tag-class>
+    <body-content>JSP</body-content>
+    <description><![CDATA[Execute an action from within a view]]></description>
+    <!-- 字段 -->
+    <attribute>
+      <name>column</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[Whether the result of this action (probably a view) should be executed/rendered]]></description>
+    </attribute>
+    
+    <!--层ID -->
+    <attribute>
+      <name>id</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[Whether the result of this action (probably a view) should be executed/rendered]]></description>
+    </attribute>
+    
+     <attribute>
+      <name>exfn</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[Whether the result of this action (probably a view) should be executed/rendered]]></description>
+    </attribute>
+    
+    <!-- 标题 -->
+    <attribute>
+      <name>title</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[Whether the writer should be flush upon end of action component tag, default to true]]></description>
+    </attribute>
+    
+     <!--长 -->
+    <attribute>
+      <name>height</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[id for referencing element. For UI and form tags it will be used as HTML id attribute]]></description>
+    </attribute>
+    
+     <!--宽 -->
+    <attribute>
+      <name>width</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[id for referencing element. For UI and form tags it will be used as HTML id attribute]]></description>
+    </attribute>
+    
+    
+         <!--主键 -->
+    <attribute>
+      <name>pkey</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[id for referencing element. For UI and form tags it will be used as HTML id attribute]]></description>
+    </attribute>
+    
+             <!--主键 -->
+    <attribute>
+      <name>pageUrl</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[id for referencing element. For UI and form tags it will be used as HTML id attribute]]></description>
+    </attribute>
+    
+                 <!--主键 -->
+    <attribute>
+      <name>deleteUrl</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[id for referencing element. For UI and form tags it will be used as HTML id attribute]]></description>
+    </attribute>
+    
+    <attribute>
+      <name>editable</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[id for referencing element. For UI and form tags it will be used as HTML id attribute]]></description>
+    </attribute>
+    
+    <attribute>
+      <name>cookie</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[id for referencing element. For UI and form tags it will be used as HTML id attribute]]></description>
+    </attribute>
+    
+                     <!--主键 -->
+    <attribute>
+      <name>searchUrl</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[id for referencing element. For UI and form tags it will be used as HTML id attribute]]></description>
+    </attribute>
+    
+    <attribute>
+      <name>editUrl</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[id for referencing element. For UI and form tags it will be used as HTML id attribute]]></description>
+    </attribute>
+    
+      <attribute>
+      <name>previewUrl</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[id for referencing element. For UI and form tags it will be used as HTML id attribute]]></description>
+    </attribute>
+    
+    
+      <attribute>
+      <name>addUrl</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[id for referencing element. For UI and form tags it will be used as HTML id attribute]]></description>
+    </attribute>
+    
+        
+      <attribute>
+      <name>pageStyle</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[id for referencing element. For UI and form tags it will be used as HTML id attribute]]></description>
+    </attribute>
+    
+         <attribute>
+      <name>pageNum</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[id for referencing element. For UI and form tags it will be used as HTML id attribute]]></description>
+    </attribute>
+    
+    <attribute>
+      <name>previewStyle</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[id for referencing element. For UI and form tags it will be used as HTML id attribute]]></description>
+    </attribute>
+    
+        
+    <attribute>
+      <name>adSearchUrl</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[id for referencing element. For UI and form tags it will be used as HTML id attribute]]></description>
+    </attribute>
+    
+     <attribute>
+      <name>rows</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[id for referencing element. For UI and form tags it will be used as HTML id attribute]]></description>
+    </attribute>
+    
+    <attribute>
+      <name>recycleUrl</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[id for referencing element. For UI and form tags it will be used as HTML id attribute]]></description>
+    </attribute>
+  </tag>
+  
+  <tag>
+  	<name>adPreviewScript</name>
+    <tag-class>tag.AdPreviewScriptTag</tag-class>
+    <body-content>JSP</body-content>
+    <description><![CDATA[高级预览的JS扩展标签]]></description>
+    
+    <attribute>
+      <name>param</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[函数所需参数，多个参数用逗号隔开，如a,b]]></description>
+    </attribute>
+  </tag>
+  
+  <tag>
+  	<name>tableUpdateSuccessScript</name>
+    <tag-class>tag.TableUpdateSuccessScriptTag</tag-class>
+    <body-content>JSP</body-content>
+    <description><![CDATA[数据更新成功的JS扩展标签]]></description>
+    
+    <attribute>
+      <name>param</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[函数所需参数，多个参数用逗号隔开，如a,b]]></description>
+    </attribute>
+  </tag>
+  
+  <tag>
+  	<name>adSearchScript</name>
+    <tag-class>tag.AdSearchScriptTag</tag-class>
+    <body-content>JSP</body-content>
+    <description><![CDATA[高级搜索的JS扩展函数标签]]></description>
+    
+    <attribute>
+      <name>param</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[函数所需参数，多个参数用逗号隔开，如a,b]]></description>
+    </attribute>
+  </tag>
+  
+  <tag>
+  	<name>tableUpdateErrorScript</name>
+    <tag-class>tag.TableUpdateErrorScriptTag</tag-class>
+    <body-content>JSP</body-content>
+    <description><![CDATA[数据更新失败的JS扩展函数标签]]></description>
+    
+    <attribute>
+      <name>param</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[函数所需参数，多个参数用逗号隔开，如a,b]]></description>
+    </attribute>
+  </tag>
+  
+  <tag>
+  	<name>previewErrorScript</name>
+    <tag-class>tag.PreviewErrorScriptTag</tag-class>
+    <body-content>JSP</body-content>
+    <description><![CDATA[预览失败的JS扩展函数标签]]></description>
+    
+    <attribute>
+      <name>param</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[函数所需参数，多个参数用逗号隔开，如a,b]]></description>
+    </attribute>
+  </tag>
+  
+  <tag>
+  	<name>deleteSuccessScript</name>
+    <tag-class>tag.DeleteSuccessScriptTag</tag-class>
+    <body-content>JSP</body-content>
+    <description><![CDATA[删除成功的JS扩展函数标签]]></description>
+    
+    <attribute>
+      <name>param</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[函数所需参数，多个参数用逗号隔开，如a,b]]></description>
+    </attribute>
+  </tag>
+  
+  <tag>
+  	<name>deleteErrorScript</name>
+    <tag-class>tag.DeleteErrorScriptTag</tag-class>
+    <body-content>JSP</body-content>
+    <description><![CDATA[删除失败的JS扩展函数标签]]></description>
+    
+    <attribute>
+      <name>param</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[函数所需参数，多个参数用逗号隔开，如a,b]]></description>
+    </attribute>
+  </tag>
+  
+  <tag>
+  	<name>newCellScript</name>
+    <tag-class>tag.NewCellScriptTag</tag-class>
+    <body-content>JSP</body-content>
+    <description><![CDATA[自定义单元格的JS扩展函数标签]]></description>
+    
+    <attribute>
+      <name>param</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[函数所需参数，多个参数用逗号隔开，如a,b]]></description>
+    </attribute>
+  </tag>
+  
+  <tag>
+  	<name>beforeScript</name>
+    <tag-class>tag.BeforeScriptTag</tag-class>
+    <body-content>JSP</body-content>
+    <description><![CDATA[数据加载前的JS扩展函数标签]]></description>
+    
+    <attribute>
+      <name>param</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[函数所需参数，多个参数用逗号隔开，如a,b]]></description>
+    </attribute>
+  </tag>
+  
+  <tag>
+  	<name>afterScript</name>
+    <tag-class>tag.AfterScriptTag</tag-class>
+    <body-content>JSP</body-content>
+    <description><![CDATA[数据加载后的JS扩展函数标签]]></description>
+    
+    <attribute>
+      <name>param</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+      <description><![CDATA[函数所需参数，多个参数用逗号隔开，如a,b]]></description>
+    </attribute>
+  </tag>
+  
+  
+</taglib>
