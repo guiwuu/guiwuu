@@ -1,5 +1,4 @@
 function replaceCustomFollowLink(){
-	console.log('replace');
 	var links = document.all.tags("a");
 	for(var i in links){
 		var href = links[i].href;
