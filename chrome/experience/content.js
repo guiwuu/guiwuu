@@ -1,6 +1,8 @@
 var links = document.all.tags("a");
 for(var i in links){
-	if(links[i].href != undefined){
-		links[i].href=links[i].href.replace('order/creator_history_new.htm','experience/wall.htm');
+	var href = links[i].href;
+	if(href != undefined && href.match('order/creator_history_new.htm') != null){
+		href = href.replace(/&.+$/, '').replace('order/creator_history_new.htm','experience/wall.htm');
+		links[i].href = href;
 	}
 }
