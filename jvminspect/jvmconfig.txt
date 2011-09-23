@@ -1,0 +1,4 @@
+set JAVA_OPTIONS=%JAVA_OPTIONS% -javaagent:C:\houqianming\passion\workspace\jvminspect\jvminspect.jar=outputfile=jvm.inspect.output,flushIntervalSecond=300
+-DHtmlFlusher.enableHyperlink=true
+
+JAVA_OPTIONS=$JAVA_OPTIONS -javaagent:/home/admin/itemcenter/jvminspect.jar=outputfile=jvm.inspect.output,flushIntervalSecond=300 -DHtmlFlusher.enableHyperlink=true

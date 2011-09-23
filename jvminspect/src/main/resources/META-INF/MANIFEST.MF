@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Class-Path: 
+Premain-Class: hqm.jvmtools.javaagent.SimpleAgent
+Boot-Class-Path: 
+Can-Redefine-Classes: false
