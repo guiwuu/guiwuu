@@ -3,7 +3,7 @@ function replaceCustomFollowLink(){
 	for(var i in links){
 		var href = links[i].href;
 		if(href != undefined && href.match('order/creator_history_new.htm') != null){
-			href = href.replace(/&.+$/, '').replace('order/creator_history_new.htm','experience/wall.htm');
+			href = href.replace(/&.+$/, '').replace('order/creator_history_new.htm','experience/united.htm');
 			links[i].href = href;
 		}
 	}
