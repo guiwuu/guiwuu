@@ -1,8 +1,7 @@
 {
-  "name": "Taobao Caipiao Assistant",
-  "version": "0.1",
-  "description": "Taobao caipiao assistant",
-  "background_page": "background.html",
+  "name": "Experience Assistant",
+  "version": "0.2",
+  "description": "Enhance taobao caipiao experience function",
   "options_page": "options.html",
   "icons": {
     "48": "icon.png"
