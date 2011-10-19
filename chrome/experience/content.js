@@ -10,7 +10,7 @@ function replaceCustomFollowLink(){
 };
 
 function addMineExperienceLink(){
-	var mineExperienceLink = location.href.replace(/\.com\/.*/,'.com') + "/lottery/experience/mine.htm";
+	var mineExperienceLink = location.href.replace(/\lottery\/.*/,'') + "lottery/experience/mine.htm";
 	var mineExperienceAnchor = "<a target='_blank' href='" + mineExperienceLink + "'>\u6211\u7684\u6218\u7EE9</a>";
 
 	var quickLink = document.all.item("quick-link");
