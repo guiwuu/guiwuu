@@ -1,7 +1,7 @@
 {
-  "name": "linkmv demo",
+  "name": "linkmv",
   "version": "0.1",
-  "description": "linkmv demo",
+  "description": "linkmv",
   "icons": {
     "48": "icon.png"
   },
@@ -13,7 +13,7 @@
     "http://*/*"
   ],
   "content_scripts": [ {
-    "matches": ["http://*/*"], 
+    "matches": ["http://*.weibo.com/*"], 
     "js": ["content.js"],
     "all_frames": true
   }]
