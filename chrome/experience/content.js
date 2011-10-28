@@ -16,8 +16,10 @@ function addMineExperienceLink(){
 	var quickLink = document.all.item("quick-link");
 	if (quickLink != undefined) {
 		var rel = quickLink.rel;
-		rel = rel.replace('</dl>', '<dd>') + mineExperienceAnchor + '</dd></dl>';
-		quickLink.rel = rel;
+		if (rel.indexOf('/experience/mine.htm') == -1) {
+			rel = rel.replace('</dl>', '<dd>') + mineExperienceAnchor + '</dd></dl>';
+			quickLink.rel = rel;
+		}
 	}
 
 	var myLotteryMenu = document.all.item("mylottery-menu");
