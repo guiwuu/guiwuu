@@ -10,13 +10,13 @@
 			<value>false</value>
 		</property>
 		<property name="url">
-			<value>jdbc:mysql://10.32.100.212:3306/schedule-demo?characterEncoding=gbk</value>
+			<value>jdbc:mysql://10.232.64.127:3306/lottery_other?characterEncoding=gbk</value>
 		</property>
 		<property name="username">
-			<value>root</value>
+			<value>caipiao</value>
 		</property>
 		<property name="password">
-			<value>123</value>
+			<value>caipiao</value>
 		</property>
 	</bean>
 </beans>
