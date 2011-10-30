@@ -7,13 +7,13 @@
 			<value>com.mysql.jdbc.Driver</value>
 		</property>
 		<property name="url">
-			<value>jdbc:mysql://localhost:3306/schedule?characterEncoding=utf-8</value>
+			<value>jdbc:mysql://10.232.64.127:3306/lottery_other?characterEncoding=gbk</value>
 		</property>
 		<property name="username">
-			<value>root</value>
+			<value>caipiao</value>
 		</property>
 		<property name="password">
-			<value>root</value>
+			<value>caipiao</value>
 		</property>
 	</bean>
 </beans>

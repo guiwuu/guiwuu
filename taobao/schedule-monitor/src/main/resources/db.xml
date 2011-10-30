@@ -15,17 +15,22 @@
 		</property>
 		<property name="tableMap">
 			<map>
-				<entry key="pamirs_schedule_queue">
-					<value>PAMIRS_SCHEDULE_QUEUE</value>
+				<entry key="PAMIRS_SCHEDULE_QUEUE">
+					<value>lottery_schedule_queue</value>
 				</entry>
-				<entry key="pamirs_schedule_server">
-					<value>PAMIRS_SCHEDULE_SERVER</value>
+				<entry key="PAMIRS_SCHEDULE_SERVER">
+					<value>lottery_schedule_server</value>
 				</entry>
-				<entry key="pamirs_schedule_tasktype">
-					<value>PAMIRS_SCHEDULE_TASKTYPE</value>
+				<entry key="PAMIRS_SCHEDULE_SERVER_HIS">
+					<value>lottery_schedule_server_history</value>
+				</entry>
+				<entry key="PAMIRS_SCHEDULE_TASKTYPE">
+					<value>lottery_schedule_task_type</value>
+				</entry>
+				<entry key="PAMIRS_SCHEDULE_TASKTRUN">
+					<value>lottery_schedule_task_run</value>
 				</entry>
 			</map>
 		</property>
 	</bean>
-
 </beans>

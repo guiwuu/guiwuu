@@ -3,7 +3,7 @@ package model;
 import java.io.Serializable;
 
 /**
- * åˆ†é¡µå¯¹è±¡.
+ * ·ÖÒ³¶ÔÏó.
  * 
  */
 public class Page implements Serializable {
@@ -11,24 +11,24 @@ public class Page implements Serializable {
 	
 	private static final long serialVersionUID = 3927459723286328872L;
 	private static int DEFAULT_PAGE_SIZE = 20;
-	private int pageSize = DEFAULT_PAGE_SIZE; // æ¯é¡µçš„æ˜¾ç¤ºè®°å½•æ•°
-	private Object data; // å½“å‰é¡µä¸­å­˜æ”¾çš„è®°
-	private long totalCount; // æ€»è®°å½•æ•°
-	private int currentPageNo; // å½“å‰é¡µæ•° ä»1å¼€å§‹
-	private long totalPageCount; // æ€»é¡µæ•°
-	private int blockSize = 9; // å—åŒºé—´å¤§å° é»˜è®¤ä¸º9
+	private int pageSize = DEFAULT_PAGE_SIZE; // Ã¿Ò³µÄÏÔÊ¾¼ÇÂ¼Êı
+	private Object data; // µ±Ç°Ò³ÖĞ´æ·ÅµÄ¼Ç
+	private long totalCount; // ×Ü¼ÇÂ¼Êı
+	private int currentPageNo; // µ±Ç°Ò³Êı ´Ó1¿ªÊ¼
+	private long totalPageCount; // ×ÜÒ³Êı
+	private int blockSize = 9; // ¿éÇø¼ä´óĞ¡ Ä¬ÈÏÎª9
 
 	/**
-	 * æ„é€ å‡½æ•°
+	 * ¹¹Ôìº¯Êı
 	 * 
 	 * @param currentPageNo
-	 *            å½“å‰é¡µå·
+	 *            µ±Ç°Ò³ºÅ
 	 * @param totalSize
-	 *            æ•°æ®åº“ä¸­æ€»è®°å½•æ¡
+	 *            Êı¾İ¿âÖĞ×Ü¼ÇÂ¼Ìõ
 	 * @param pageSize
-	 *            æœ¬é¡µå®¹é‡
+	 *            ±¾Ò³ÈİÁ¿
 	 * @param data
-	 *            æœ¬é¡µåŒ…å«çš„æ•°æ®
+	 *            ±¾Ò³°üº¬µÄÊı¾İ
 	 */
 	public Page(int currentPageNo, long totalSize, int pageSize, Object data) {
 		this.pageSize = pageSize;
@@ -39,7 +39,7 @@ public class Page implements Serializable {
 
 
 	/**
-	 * æ„é€ å‡½æ•°
+	 * ¹¹Ôìº¯Êı
 	 * 
 	 * @param data
 	 */
@@ -51,14 +51,14 @@ public class Page implements Serializable {
 	}
 
 	/**
-	 * æ€»è®°å½•æ•°
+	 * ×Ü¼ÇÂ¼Êı
 	 */
 	public long getTotalCount() {
 		return this.totalCount;
 	}
 
 	/**
-	 * æ€»é¡µæ•°
+	 * ×ÜÒ³Êı
 	 */
 	public long getTotalPageCount() {
 		if (totalCount % pageSize == 0)
@@ -69,14 +69,14 @@ public class Page implements Serializable {
 	}
 
 	/**
-	 * å–æ¯é¡µæ˜¾ç¤ºæ•°æ®æ¡æ•°
+	 * È¡Ã¿Ò³ÏÔÊ¾Êı¾İÌõÊı
 	 */
 	public int getPageSize() {
 		return pageSize;
 	}
 
 	/**
-	 * å–æ•°æ®
+	 * È¡Êı¾İ
 	 * 
 	 * @return
 	 */
@@ -85,7 +85,7 @@ public class Page implements Serializable {
 	}
 
 	/**
-	 * å½“å‰é¡µæ•°
+	 * µ±Ç°Ò³Êı
 	 */
 	public int getCurrentPageNo() {
 		if (totalCount == 0)
@@ -94,21 +94,21 @@ public class Page implements Serializable {
 	}
 
 	/**
-	 * è¯¥é¡µæ˜¯å¦æœ‰ä¸‹é¡µ
+	 * ¸ÃÒ³ÊÇ·ñÓĞÏÂÒ³
 	 */
 	public boolean hasNextPage() {
 		return this.getCurrentPageNo() < this.getTotalPageCount();
 	}
 
 	/**
-	 * è¯¥é¡µæ˜¯å¦æœ‰ä¸Šé¡µ
+	 * ¸ÃÒ³ÊÇ·ñÓĞÉÏÒ³
 	 */
 	public boolean hasPreviousPage() {
 		return this.getCurrentPageNo() > 1;
 	}
 
 	/**
-	 * è¿”å›å½“å‰å—åŒºé—´å·
+	 * ·µ»Øµ±Ç°¿éÇø¼äºÅ
 	 * 
 	 * @return
 	 */
