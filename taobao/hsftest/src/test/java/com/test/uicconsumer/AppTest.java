@@ -20,4 +20,5 @@ public class AppTest {
 		 ExperienceService experienceService = ( ExperienceService) ctx.getBean("experienceService");
 		System.out.println("user[id:10000L] nick:" + experienceService.queryRules(null));
 	}
+	
 }

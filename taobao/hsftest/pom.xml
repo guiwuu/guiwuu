@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.guiwuu.workshop</groupId>
-	<artifactId>hsfunittest</artifactId>
+	<artifactId>hsftest</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
@@ -66,7 +66,7 @@ encoding/<project>=UTF-8]]>
 		<dependency>
 			<groupId>com.taobao.lottery</groupId>
 			<artifactId>lottery-base</artifactId>
-			<version>1.1.0</version>
+			<version>1.2.6</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -75,7 +75,6 @@ encoding/<project>=UTF-8]]>
 			<version>1.0.2-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
