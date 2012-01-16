@@ -2,7 +2,6 @@
   "name": "Experience Assistant",
   "version": "0.2",
   "description": "Enhance taobao caipiao experience function",
-  "options_page": "options.html",
   "icons": {
     "48": "icon.png"
   },

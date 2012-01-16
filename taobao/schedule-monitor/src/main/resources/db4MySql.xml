@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="GB2312"?>
+<?xml version="1.0" encoding="GBK"?>
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 <beans>
-	<bean id="schedule_source" class="org.apache.commons.dbcp.BasicDataSource"
+	<bean id="schedule_base" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName">
 			<value>com.mysql.jdbc.Driver</value>
