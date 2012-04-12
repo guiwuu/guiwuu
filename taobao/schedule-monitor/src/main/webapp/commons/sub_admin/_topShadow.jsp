@@ -1,1 +1,0 @@
-<div id="left_s"><div id="left_s_t"></div><div id="left_s_b"></div></div><div id="left_s_o"><div id="top_s"><div id="top_s_l"></div></div>
