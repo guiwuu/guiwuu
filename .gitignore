@@ -10,5 +10,9 @@
 /*/*/.idea
 /*/*.iml
 /*/*/*.iml
+/*/out
+/*/*/out
+/android/*/gen
+/android/*/local.properties
 *~
 *.log
