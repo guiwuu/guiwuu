@@ -18,3 +18,14 @@ array.collect(square).collect(
 	{ println "result is ${result}" ; result += it }
 )
 println "result is ${result}"
+
+println "\ninc:"
+inc = {
+    private i=0;
+    { -> ++i};
+}
+a = inc()
+b = inc()
+println "a: ${a()}"
+println "a: ${a()}"
+println "b: ${b()}"
