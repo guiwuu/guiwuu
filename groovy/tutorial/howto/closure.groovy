@@ -21,7 +21,7 @@ println "result is ${result}"
 
 println "\ninc:"
 inc = {
-    private i=0;
+    def i=0;
     { -> ++i};
 }
 a = inc()
