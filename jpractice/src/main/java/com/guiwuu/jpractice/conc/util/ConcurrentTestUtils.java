@@ -23,6 +23,7 @@ public class ConcurrentTestUtils {
         CountDownLatch begin = new CountDownLatch(1);
         CountDownLatch end = new CountDownLatch(concurrent);
         long beginTime = System.currentTimeMillis();
+        logger.log(Level.WARNING, "{0} threads begin to run concurrently...", concurrent);
 
         for (BatchExecuteThread t : threads) {
             t.setBegin(begin);
@@ -53,6 +54,7 @@ public class ConcurrentTestUtils {
         CountDownLatch end = new CountDownLatch(concurrent * loop);
         CyclicBarrier barrier = new CyclicBarrier(concurrent);
         long beginTime = System.currentTimeMillis();
+        logger.log(Level.WARNING, "{0} threads begin to run {1} times concurrently...", new Object[]{concurrent, loop});
 
         for (CyclicExecuteThread t : threads) {
             t.setBegin(begin);

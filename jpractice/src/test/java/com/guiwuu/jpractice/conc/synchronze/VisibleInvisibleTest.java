@@ -1,7 +1,9 @@
 package com.guiwuu.jpractice.conc.synchronze;
 
+import com.guiwuu.jpractice.conc.synchronize.AppConfig;
 import com.guiwuu.jpractice.conc.synchronize.VisibleAppConfig;
 import com.guiwuu.jpractice.conc.synchronize.InvisibleAppConfig;
+import com.guiwuu.jpractice.conc.util.BatchExecuteThread;
 import com.guiwuu.jpractice.conc.util.ConcurrentTestUtils;
 import com.guiwuu.jpractice.conc.util.CyclicExecuteThread;
 import org.junit.Test;
@@ -23,31 +25,37 @@ public class VisibleInvisibleTest {
 
     @Test
     public void concurrentUpdateAppConfig() throws Exception {
-        final VisibleAppConfig visibleAppConfig = new VisibleAppConfig();
-        final InvisibleAppConfig invisibleAppConfig = new InvisibleAppConfig();
-
-        int concurrent = 100;
-        int loop = 10000;
-        logger.log(Level.WARNING, "{0} threads begin to run {1} times concurrently...", new Object[]{concurrent, loop});
-        final CyclicExecuteThread[] threads = new CyclicExecuteThread[concurrent];
+        final AppConfig appConfig = new VisibleAppConfig();
+        int concurrent = 10;
+        final BatchExecuteThread[] threads = new BatchExecuteThread[concurrent];
         for (int i = 0; i < concurrent; i++) {
-            threads[i] = new CyclicExecuteThread("thread " + i) {
+            threads[i] = new BatchExecuteThread("app config detecting thread " + i) {
+                private int loop = 0;
 
                 @Override
                 protected boolean runTask() throws Exception {
-                    invisibleAppConfig.update();
-                    visibleAppConfig.update();
+                    while (!appConfig.isUpdated()) {
+                        loop++;
+                    }
+                    logger.log(Level.WARNING, "{0} detects config updated after {1} loops at {2}", new Object[]{getName(), loop, System.nanoTime()});
                     return true;
                 }
             };
         }
 
-        assertTrue(ConcurrentTestUtils.run(threads, loop));
-        String format = "%s, %s";
-        System.out.println("total => " + concurrent * loop);
-        System.out.println("invisible primitive int => " + invisibleAppConfig.i);
-        System.out.println("invisible object reference => " + invisibleAppConfig.j);
-        System.out.println("volatile primitive int => " + visibleAppConfig.i);
-        System.out.println("atomic object reference => " + visibleAppConfig.j);
+        new Thread() {
+
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    logger.log(Level.SEVERE, this + "error occurs", e);
+                }
+                appConfig.update();
+                logger.log(Level.WARNING, "updated at {0}", System.nanoTime());
+            }
+        }.start();
+        assertTrue(ConcurrentTestUtils.run(threads));
     }
 }
