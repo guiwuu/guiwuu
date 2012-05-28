@@ -27,11 +27,11 @@ public class VisibleInvisibleTest {
         final InvisibleAppConfig invisibleAppConfig = new InvisibleAppConfig();
 
         int concurrent = 100;
-        int loop = 200;
-        logger.log(Level.WARNING, "{0} threads running concurrently...", concurrent);
+        int loop = 10000;
+        logger.log(Level.WARNING, "{0} threads begin to run {1} times concurrently...", new Object[]{concurrent, loop});
         final CyclicExecuteThread[] threads = new CyclicExecuteThread[concurrent];
         for (int i = 0; i < concurrent; i++) {
-            threads[i] = new CyclicExecuteThread("cyclic thread") {
+            threads[i] = new CyclicExecuteThread("thread " + i) {
 
                 @Override
                 protected boolean runTask() throws Exception {

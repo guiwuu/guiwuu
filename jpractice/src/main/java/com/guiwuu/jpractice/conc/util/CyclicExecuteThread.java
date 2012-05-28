@@ -14,6 +14,7 @@ public abstract class CyclicExecuteThread extends Thread {
     private CountDownLatch begin;
     private CountDownLatch end;
     private CyclicBarrier barrier;
+    private int loop;
 
     public CyclicExecuteThread(String name) {
         super(name);
@@ -23,7 +24,8 @@ public abstract class CyclicExecuteThread extends Thread {
     public void run() {
         try {
             begin.await();
-            for (int i = 0; i < barrier.getParties(); i++) {
+            for (int i = 0; i < loop; i++) {
+                //logger.log(Level.INFO, super.getName() + " is running " + i + "st...");
                 try {
                     if (runTask()) {
                         success.incrementAndGet();
@@ -60,5 +62,9 @@ public abstract class CyclicExecuteThread extends Thread {
 
     public void setBarrier(CyclicBarrier barrier) {
         this.barrier = barrier;
+    }
+
+    public void setLoop(int loop) {
+        this.loop = loop;
     }
 }

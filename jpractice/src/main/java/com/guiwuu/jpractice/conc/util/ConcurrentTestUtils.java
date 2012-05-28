@@ -51,7 +51,7 @@ public class ConcurrentTestUtils {
         AtomicInteger success = new AtomicInteger();
         CountDownLatch begin = new CountDownLatch(1);
         CountDownLatch end = new CountDownLatch(concurrent * loop);
-        CyclicBarrier barrier = new CyclicBarrier(loop);
+        CyclicBarrier barrier = new CyclicBarrier(concurrent);
         long beginTime = System.currentTimeMillis();
 
         for (CyclicExecuteThread t : threads) {
@@ -59,6 +59,7 @@ public class ConcurrentTestUtils {
             t.setEnd(end);
             t.setBarrier(barrier);
             t.setSuccess(success);
+            t.setLoop(loop);
             t.start();
         }
 
