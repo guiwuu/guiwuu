@@ -1,4 +1,4 @@
-package com.guiwuu.jumd;
+package com.guiwuu.swissknife.converter.jumd;
 
 /**
  * Function block of UMD

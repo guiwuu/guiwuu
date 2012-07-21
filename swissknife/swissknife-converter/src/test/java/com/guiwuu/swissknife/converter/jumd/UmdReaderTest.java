@@ -1,6 +1,5 @@
-package com.guiwuu.jumd.util;
+package com.guiwuu.swissknife.converter.jumd;
 
-import com.guiwuu.jumd.Umd;
 import java.util.Arrays;
 import static org.junit.Assert.*;
 
@@ -32,7 +31,7 @@ public class UmdReaderTest {
 
     @Test
     public void testRead() throws Exception {
-        File f = new File("D:\\downloads\\test.umd");
+        File f = new File("D:\\tmp\\jumd\\test.umd");
         UmdReader umdReader = new UmdReader(f);
         Umd umd = umdReader.read();
         assertNotNull(umd);
@@ -40,7 +39,7 @@ public class UmdReaderTest {
 
     @Test
     public void testBatchRead() throws Exception {
-        File root = new File("E:\\Books");
+        File root = new File("E:\\doc\\book");
         int travelDeep = 1, maxDeep = 10;
         int umdNum = 0, maxNum = 10;
         LinkedList<File> a = new LinkedList<File>();

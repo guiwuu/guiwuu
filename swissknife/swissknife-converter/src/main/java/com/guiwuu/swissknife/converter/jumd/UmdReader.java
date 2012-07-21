@@ -1,19 +1,13 @@
-package com.guiwuu.jumd.util;
+package com.guiwuu.swissknife.converter.jumd;
 
-import static com.guiwuu.jumd.UmdBlockFunc.*;
-import static com.guiwuu.jumd.util.UmdUtil.*;
+import static com.guiwuu.swissknife.converter.jumd.UmdBlockFunc.*;
 
-import com.guiwuu.jumd.UmdHeader;
 import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.guiwuu.jumd.Umd;
-import com.guiwuu.jumd.UmdBlockData;
-import com.guiwuu.jumd.UmdBlockFunc;
-import com.guiwuu.jumd.UmdChapter;
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
@@ -170,25 +164,25 @@ public class UmdReader {
         if (ID_DOC_TYPE == blockId) {
             header.setDocType(block.getContent()[0]);
         } else if (ID_TITLE == blockId) {
-            header.setTitle(unicode(content));
+            header.setTitle(UmdUtil.unicode(content));
         } else if (ID_AUTHOR == blockId) {
-            header.setAuthor(unicode(content));
+            header.setAuthor(UmdUtil.unicode(content));
         } else if (ID_YEAR == blockId) {
-            header.setYear(unicode(content));
+            header.setYear(UmdUtil.unicode(content));
         } else if (ID_MONTH == blockId) {
-            header.setMonth(unicode(content));
+            header.setMonth(UmdUtil.unicode(content));
         } else if (ID_DAY == blockId) {
-            header.setDay(unicode(content));
+            header.setDay(UmdUtil.unicode(content));
         } else if (ID_GENDER == blockId) {
-            header.setGender(unicode(content));
+            header.setGender(UmdUtil.unicode(content));
         } else if (ID_PUBLISHER == blockId) {
-            header.setPublisher(unicode(content));
+            header.setPublisher(UmdUtil.unicode(content));
         } else if (ID_VENDOR == blockId) {
-            header.setVendor(unicode(content));
+            header.setVendor(UmdUtil.unicode(content));
         } else if (ID_CLEN == blockId) {
-            header.setContentSize(bytesToInt(content));
+            header.setContentSize(UmdUtil.bytesToInt(content));
         } else if (ID_EOF == blockId) {
-            header.setTotalSize(bytesToInt(content));
+            header.setTotalSize(UmdUtil.bytesToInt(content));
         }
     }
 
@@ -196,15 +190,15 @@ public class UmdReader {
         validateBlockFuncWithData(block);
         if (ID_CHAP_OFFSET == block.getBlockId()) {
             UmdBlockData data = block.getData(0);
-            chapterOffsets = bytesToInts(data.getContent());
+            chapterOffsets = UmdUtil.bytesToInts(data.getContent());
         } else if (ID_CHAP_TITLE == block.getBlockId()) {
             byte[] b = block.getData(0).getContent();
             int i = 0;
             while (i < b.length) {
-                int len = bytesToInt(b[i]);
+                int len = UmdUtil.bytesToInt(b[i]);
                 byte[] bb = new byte[len];
                 System.arraycopy(b, ++i, bb, 0, len);
-                String title = unicode(bb);
+                String title = UmdUtil.unicode(bb);
                 umd.addChapter(new UmdChapter(title));
                 i += len;
             }
@@ -215,7 +209,7 @@ public class UmdReader {
     private void parseEoc(UmdBlockFunc block) {
         validateBlockFuncWithData(block);
         UmdBlockData data = block.getData(0);
-        expectedChunkIds = bytesToInts(data.getContent());
+        expectedChunkIds = UmdUtil.bytesToInts(data.getContent());
     }
 
     private void parseCover(UmdBlockFunc block) {
@@ -233,7 +227,7 @@ public class UmdReader {
         for (int j = begin; j < block.sizeOfDatas(); j++) {
             try {
                 chunkIds.add(block.getData(j).getBlockId());
-                bos.write(unzip(block.getData(j).getContent()));
+                bos.write(UmdUtil.unzip(block.getData(j).getContent()));
             } catch (IOException ex) {
                 log.log(Level.SEVERE, "error ocurrs in put data block conent together, j=" + j, ex);
             }
@@ -309,7 +303,7 @@ public class UmdReader {
             return true;
         }
 
-        int expectedId = bytesToInt(block.getContent());
+        int expectedId = UmdUtil.bytesToInt(block.getContent());
         int id = block.getData(0).getBlockId();
         if (id != expectedId) {
             String msg = "function block(id=0x{0}) expect data block id is {1} but {2}";

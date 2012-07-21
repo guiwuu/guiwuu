@@ -1,18 +1,4 @@
-package com.guiwuu.jumd;
-
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.FontMetrics;
-import java.awt.Graphics;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
-
-import com.guiwuu.jumd.util.UmdUtil;
-import com.sun.image.codec.jpeg.JPEGCodec;
-import com.sun.image.codec.jpeg.JPEGEncodeParam;
-import com.sun.image.codec.jpeg.JPEGImageEncoder;
+package com.guiwuu.swissknife.converter.jumd;
 
 /**
  * This is the cover part of the UMD file.

@@ -1,14 +1,8 @@
-package com.guiwuu.jumd.util;
+package com.guiwuu.swissknife.converter.jumd;
 
-import static com.guiwuu.jumd.UmdBlockFunc.*;
-import static com.guiwuu.jumd.util.UmdUtil.*;
+import static com.guiwuu.swissknife.converter.jumd.UmdBlockFunc.*;
+import static com.guiwuu.swissknife.converter.jumd.UmdUtil.*;
 
-import com.guiwuu.jumd.Umd;
-import com.guiwuu.jumd.UmdBlockBase;
-import com.guiwuu.jumd.UmdBlockData;
-import com.guiwuu.jumd.UmdBlockFunc;
-import com.guiwuu.jumd.UmdChapter;
-import com.guiwuu.jumd.UmdHeader;
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -58,12 +52,12 @@ public class UmdWriter {
         } catch (FileNotFoundException ex) {
             log.log(Level.SEVERE, "file not found: " + txt.getAbsolutePath(), ex);
         } catch (IOException ex) {
-            log.log(Level.SEVERE, "io error ocurrs in writing umd to file", ex);
+            log.log(Level.SEVERE, "io error ocurrs in writing jumd to file", ex);
         } finally {
             try {
                 fw.close();
             } catch (IOException ex) {
-                log.log(Level.SEVERE, "error ocurrs in closing umd file", ex);
+                log.log(Level.SEVERE, "error ocurrs in closing jumd file", ex);
             }
         }
     }
@@ -89,12 +83,12 @@ public class UmdWriter {
         } catch (FileNotFoundException ex) {
             log.log(Level.SEVERE, "file not found: " + file.getAbsolutePath(), ex);
         } catch (IOException ex) {
-            log.log(Level.SEVERE, "io error ocurrs in writing umd to file", ex);
+            log.log(Level.SEVERE, "io error ocurrs in writing jumd to file", ex);
         } finally {
             try {
                 os.close();
             } catch (IOException ex) {
-                log.log(Level.SEVERE, "error ocurrs in closing umd file", ex);
+                log.log(Level.SEVERE, "error ocurrs in closing jumd file", ex);
             }
         }
     }
@@ -276,12 +270,12 @@ public class UmdWriter {
         } catch (FileNotFoundException ex) {
             log.log(Level.SEVERE, "file not found: " + cover.getAbsolutePath(), ex);
         } catch (IOException ex) {
-            log.log(Level.SEVERE, "io error ocurrs in writing umd to file", ex);
+            log.log(Level.SEVERE, "io error ocurrs in writing jumd to file", ex);
         } finally {
             try {
                 fos.close();
             } catch (IOException ex) {
-                log.log(Level.SEVERE, "error ocurrs in closing umd file", ex);
+                log.log(Level.SEVERE, "error ocurrs in closing jumd file", ex);
             }
         }
 
@@ -304,12 +298,12 @@ public class UmdWriter {
             } catch (FileNotFoundException ex) {
                 log.log(Level.SEVERE, "file not found: " + txt.getAbsolutePath(), ex);
             } catch (IOException ex) {
-                log.log(Level.SEVERE, "io error ocurrs in writing umd to file", ex);
+                log.log(Level.SEVERE, "io error ocurrs in writing jumd to file", ex);
             } finally {
                 try {
                     fw.close();
                 } catch (IOException ex) {
-                    log.log(Level.SEVERE, "error ocurrs in closing umd file", ex);
+                    log.log(Level.SEVERE, "error ocurrs in closing jumd file", ex);
                 }
             }
         }

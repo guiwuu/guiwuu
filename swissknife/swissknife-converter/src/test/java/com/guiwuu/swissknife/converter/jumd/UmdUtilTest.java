@@ -1,4 +1,4 @@
-package com.guiwuu.jumd.util;
+package com.guiwuu.swissknife.converter.jumd;
 
 import org.junit.Test;
 import static org.junit.Assert.*;

@@ -1,4 +1,4 @@
-package com.guiwuu.jumd.util;
+package com.guiwuu.swissknife.converter.jumd;
 
 import com.sun.image.codec.jpeg.JPEGCodec;
 import com.sun.image.codec.jpeg.JPEGEncodeParam;

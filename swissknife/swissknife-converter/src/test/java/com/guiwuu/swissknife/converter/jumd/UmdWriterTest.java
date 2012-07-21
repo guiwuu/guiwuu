@@ -1,10 +1,7 @@
-package com.guiwuu.jumd.util;
+package com.guiwuu.swissknife.converter.jumd;
 
 import static org.junit.Assert.*;
 
-import com.guiwuu.jumd.Umd;
-import com.guiwuu.jumd.UmdCover;
-import com.guiwuu.jumd.UmdHeader;
 import org.junit.Test;
 import java.io.File;
 
@@ -26,7 +23,7 @@ public class UmdWriterTest {
         umd.addChapter("chapter", content);
         UmdCover cover = new UmdCover(UmdUtil.genImage("cover", 120, 80));
         umd.setCover(cover);
-        File txt = new File("D:\\downloads\\convert.txt");
+        File txt = new File("D:\\tmp\\jumd\\convert.txt");
         UmdWriter writer = new UmdWriter(umd);
         writer.convertToTxt(txt);
     }
@@ -34,11 +31,11 @@ public class UmdWriterTest {
     @Test
     public void testReadToConvert() throws Exception {
         System.out.println("read...");
-        File in = new File("D:\\downloads\\test.umd");
+        File in = new File("D:\\tmp\\jumd\\test.umd");
         Umd expected = new UmdReader(in).read();
 
         System.out.println("convert...");
-        File test = new File("D:\\downloads\\test.txt");
+        File test = new File("D:\\tmp\\jumd\\test.txt");
         UmdWriter write = new UmdWriter(expected);
         write.convertToTxt(test);
     }
@@ -52,7 +49,7 @@ public class UmdWriterTest {
         umd.addChapter("chapter", content);
         UmdCover cover = new UmdCover(UmdUtil.genImage("cover", 120, 80));
         umd.setCover(cover);
-        File out = new File("D:\\downloads\\extract");
+        File out = new File("D:\\tmp\\jumd\\extract");
         UmdWriter writer = new UmdWriter(umd);
         writer.extractToFolder(out);
     }
@@ -60,11 +57,11 @@ public class UmdWriterTest {
     @Test
     public void testReadToExtract() throws Exception {
         System.out.println("read...");
-        File in = new File("D:\\downloads\\test.umd");
+        File in = new File("D:\\tmp\\jumd\\test.umd");
         Umd expected = new UmdReader(in).read();
 
         System.out.println("extract...");
-        File test = new File("D:\\downloads\\test");
+        File test = new File("D:\\tmp\\jumd\\test");
         UmdWriter write = new UmdWriter(expected);
         write.extractToFolder(test);
     }
@@ -78,7 +75,7 @@ public class UmdWriterTest {
         umd.addChapter("chapter", content);
         UmdCover cover = new UmdCover(UmdUtil.genImage("cover", 120, 80));
         umd.setCover(cover);
-        File out = new File("D:\\downloads\\out.umd");
+        File out = new File("D:\\tmp\\jumd\\out.umd");
         UmdWriter writer = new UmdWriter(umd);
         writer.writeToUmd(out);
         byte[] bytes = UmdUtil.readFile(out);
@@ -88,11 +85,11 @@ public class UmdWriterTest {
     @Test
     public void testReadToWrite() throws Exception {
         System.out.println("read...");
-        File in = new File("D:\\downloads\\test.umd");
+        File in = new File("D:\\tmp\\jumd\\test.umd");
         Umd expected = new UmdReader(in).read();
 
         System.out.println("write...");
-        File out = new File("D:\\downloads\\actual.umd");
+        File out = new File("D:\\tmp\\jumd\\actual.umd");
         UmdWriter write = new UmdWriter(expected);
         write.writeToUmd(out);
 

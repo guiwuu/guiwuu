@@ -1,4 +1,4 @@
-package com.guiwuu.jumd;
+package com.guiwuu.swissknife.converter.jumd;
 
 import java.util.ArrayList;
 import java.util.List;
