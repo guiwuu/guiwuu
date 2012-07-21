@@ -1,13 +1,5 @@
 package com.guiwuu.swissknife.converter.cvs;
 
-/**
- * Convert cvs data to beans
- *
- * The mapping from cvs to bean is according to the first line in a csv file.
- *
- * @author daijun
- * @sine 2012-07-21
- */
 
 import java.io.File;
 import java.lang.reflect.Method;
@@ -16,7 +8,14 @@ import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 
-
+/**
+ * Convert cvs data to beans
+ * <p/>
+ * The mapping from cvs to bean is according to the first line in a csv file.
+ *
+ * @author daijun
+ * @sine 2012-07-21
+ */
 public class CsvBeanConverter<E> {
 
     private File file;
