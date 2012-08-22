@@ -1,0 +1,4 @@
+id,available,timestamp,productName
+1,FALSE,123,abc
+2,TRUE,999999999999,商品
+3,FALSE,1234567890,"abc,商品"
