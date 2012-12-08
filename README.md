@@ -1,4 +1,4 @@
 guiwuu's coding
 ===============
 
-Some usage source codes.
+some useful, interesting or just testing codes.
