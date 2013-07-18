@@ -1,0 +1,14 @@
+$ irb
+irb(main):001:0> 'begin' <=> 'end'
+=> -1
+irb(main):002:0> 'same' <=> 'same'
+=> 0
+irb(main):003:0> a = [5, 3, 4, 1]
+=> [5, 3, 4, 1]
+irb(main):004:0> a.sort
+=> [1, 3, 4, 5]
+irb(main):005:0> a.max
+=> 5
+irb(main):005:0> a.min
+=> 1 
+irb(main):007:0> quit

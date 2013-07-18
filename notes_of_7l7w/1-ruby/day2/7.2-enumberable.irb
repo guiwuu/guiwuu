@@ -1,0 +1,44 @@
+$ irb
+irb(main):001:0> a = [5, 3, 4, 1]
+=> [5, 3, 4, 1]
+irb(main):002:0> a.any? {|i| i > 6}
+=> false
+irb(main):003:0> a.any? {|i| i > 4}
+=> true
+irb(main):004:0> a.all? {|i| i > 4}
+=> false
+irb(main):005:0> a.all? {|i| i > 0}
+=> true
+irb(main):006:0> a.collect {|i| i * 2}
+=> [10, 6, 8, 2]
+irb(main):010:0> a.map {|i| i * 2}
+=> [10, 6, 8, 2]
+irb(main):007:0> a.select {|i| i % 2 == 0} #even
+=> [4]
+irb(main):008:0> a.select {|i| i % 2 == 1} #odd
+=> [5, 3, 1]
+irb(main):011:0> a.find {|i| i % 2 == 1}
+=> 5
+irb(main):012:0> a.find_all {|i| i % 2 == 1}
+=> [5, 3, 1]
+irb(main):009:0> a.member?(2)
+=> false
+
+irb(main):013:0> a.inject(0) {|sum, i| sum + i}
+=> 13
+irb(main):014:0> a.inject {|sum, i| sum + i}
+=> 13
+irb(main):015:0> a.inject(1) {|sum, i| sum + i}
+=> 14
+irb(main):016:0> a.inject {|product, i| product * i}
+=> 60
+irb(main):017:0> a.inject(0) do |sum, i|
+irb(main):018:1*   puts "sum: #{sum} i: #{i} sum + i: #{sum + i}"
+irb(main):019:1>   sum + i
+irb(main):020:1> end
+sum: 0 i: 5 sum + i: 5
+sum: 5 i: 3 sum + i: 8
+sum: 8 i: 4 sum + i: 12
+sum: 12 i: 1 sum + i: 13
+=> 13
+irb(main):021:0> quit
