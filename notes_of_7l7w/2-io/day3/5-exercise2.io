@@ -1,19 +1,16 @@
-OperatorTable addAssignOperator(":", "atPutNumber")
-curlyBrackets := method(
-  r := Map clone
+squareBrackets := method(
+  l := List clone
   call message arguments foreach(arg,
-    r doMessage(arg)
+    e := doMessage(arg)
+    l push(e)
   )
-  r
-)
-Map atPutNumber := method(
-  self atPut(
-    call evalArgAt(0)  asMutable removePrefix("\"") removeSuffix("\""),
-    call evalArgAt(1)
-  )
+  l
 )
 
-s := File with("1-phonebook.txt") openForReading contents
-phoneNumbers := doString(s)
-phoneNumbers keys println
-phoneNumbers values println
+
+s := File with("5-exercise2.txt") openForReading contents
+numbers := doString(s)
+numbers println
+numbers foreach(e,
+  e type println
+)
