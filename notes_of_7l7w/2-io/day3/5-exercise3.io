@@ -1,12 +1,14 @@
 Builder := Object clone
 Builder deep := 0
+Builder tab := method(j,
+  "  " repeated(j)
+)
 Builder forward := method(
-  self tab(deep)
-  write("<", call message name)
+  write(tab(deep), "<", call message name)
   args := call message arguments
-  arg0 := self doMessage(args first)  
-  if (arg0 type == "Map",
-     arg0 foreach(k, v, 
+  arg0 := args first 
+  if (arg0 asString findSeq("curlyBrackets") == 0,
+     doString(arg0 asString) foreach(k, v, 
        write(" ", k, "=\"", v, "\"")
      )
      args removeAt(0)
@@ -16,23 +18,18 @@ Builder forward := method(
   args foreach(arg, 
     content := self doMessage(arg)
     if(content type == "Sequence",
-      self tab(deep)
-      writeln(content)
+      writeln(tab(deep), content)
     ) 
   )
   self deep := deep - 1
-  self tab(deep)
-  writeln("</", call message name, ">")
-)
-Builder tab := method(j,
-  for(i, 1, j, "  " print)
+  writeln(tab(deep), "</", call message name, ">")
 )
 
 OperatorTable addAssignOperator(":", "atPutNumber")
 curlyBrackets := method(
   r := Map clone
   call message arguments foreach(arg,
-    write("--", arg type, "--")
+    r doMessage(arg)
   )
   r
 )
@@ -47,7 +44,8 @@ Builder book({"author" : "Tate"},
   chapter({"no" : 1},
     "I am Tom"
   ),
-  chapter({"no" : 2},
+  chapter({"no" : 2, "title" : "Jerry"},
     "I am Jerry"
   )
+  chapter("I am nobody")
 )
