@@ -1,4 +1,4 @@
-package com.guiwuu.puzzle.amazon;
+package com.guiwuu.puzzle.cards;
 
 import java.util.Arrays;
 
