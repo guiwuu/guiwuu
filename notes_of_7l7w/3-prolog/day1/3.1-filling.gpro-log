@@ -1,0 +1,36 @@
+GNU Prolog 1.4.4 (64 bits)
+Compiled Apr 23 2013, 16:41:01 with x86_64-w64-mingw32-gcc
+By Daniel Diaz
+Copyright (C) 1999-2013 Daniel Diaz
+| ?- ['D:/codes/guiwuu/notes_of_7l7w/3-prolog/day1/3.0-food.pl'].
+compiling D:/codes/guiwuu/notes_of_7l7w/3-prolog/day1/3.0-food.pl for byte code...
+D:/codes/guiwuu/notes_of_7l7w/3-prolog/day1/3.0-food.pl compiled, 12 lines read - 1562 bytes written, 16 ms
+
+yes
+| ?- food_type(What, meat).
+
+What = spam ? ;
+
+What = sausage ? ;
+
+no
+| ?- food_flavor(sausage, sweet).
+
+no
+| ?- flavor(sweet, What).
+
+What = dessert ? ;
+
+What = soda
+
+yes
+| ?- 
+food_flavor(What, savory).
+
+What = velveeta ? ;
+
+What = spam ? ;
+
+What = sausage ? ;
+
+no

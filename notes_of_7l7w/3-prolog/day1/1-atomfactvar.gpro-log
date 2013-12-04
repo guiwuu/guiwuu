@@ -1,0 +1,17 @@
+GNU Prolog 1.4.4 (64 bits)
+Compiled Apr 23 2013, 16:41:01 with x86_64-w64-mingw32-gcc
+By Daniel Diaz
+Copyright (C) 1999-2013 Daniel Diaz
+| ?- ['D:/codes/guiwuu/notes_of_7l7w/3-prolog/day1/friends.pl'].
+compiling D:/codes/guiwuu/notes_of_7l7w/3-prolog/day1/friends.pl for byte code...
+D:/codes/guiwuu/notes_of_7l7w/3-prolog/day1/friends.pl:5-6: warning: singleton variables [Z] for friend/2
+D:/codes/guiwuu/notes_of_7l7w/3-prolog/day1/friends.pl compiled, 6 lines read - 967 bytes written, 15 ms
+
+(16 ms) yes
+| ?- likes(wallace, sheep).
+
+no
+| ?- likes(grommit, cheese).
+
+yes
+| ?- 

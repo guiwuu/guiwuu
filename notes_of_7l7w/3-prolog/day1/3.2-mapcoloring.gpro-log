@@ -1,0 +1,49 @@
+GNU Prolog 1.4.4 (64 bits)
+Compiled Apr 23 2013, 16:41:01 with x86_64-w64-mingw32-gcc
+By Daniel Diaz
+Copyright (C) 1999-2013 Daniel Diaz
+| ?- ['D:/codes/guiwuu/notes_of_7l7w/3-prolog/day1/3.2-map.pl'].
+compiling D:/codes/guiwuu/notes_of_7l7w/3-prolog/day1/3.2-map.pl for byte code...
+D:/codes/guiwuu/notes_of_7l7w/3-prolog/day1/3.2-mapcoloring.pl compiled, 10 lines read - 1760 bytes written, 16 ms
+
+yes
+| ?- coloring(Alabama, Mississippi, Georgia, Tennessee, Florida).
+
+Alabama = blue
+Florida = green
+Georgia = red
+Mississippi = red
+Tennessee = green ? a
+
+Alabama = green
+Florida = blue
+Georgia = red
+Mississippi = red
+Tennessee = blue
+
+Alabama = blue
+Florida = red
+Georgia = green
+Mississippi = green
+Tennessee = red
+
+Alabama = red
+Florida = blue
+Georgia = green
+Mississippi = green
+Tennessee = blue
+
+Alabama = green
+Florida = red
+Georgia = blue
+Mississippi = blue
+Tennessee = red
+
+Alabama = red
+Florida = green
+Georgia = blue
+Mississippi = blue
+Tennessee = green
+
+(31 ms) no
+| ?- 
