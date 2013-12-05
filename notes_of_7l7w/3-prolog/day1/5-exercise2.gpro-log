@@ -1,0 +1,22 @@
+GNU Prolog 1.4.4 (64 bits)
+Compiled Apr 23 2013, 16:41:01 with x86_64-w64-mingw32-gcc
+By Daniel Diaz
+Copyright (C) 1999-2013 Daniel Diaz
+| ?- ['D:/codes/guiwuu/notes_of_7l7w/3-prolog/day1/5-exercise2.pl'].
+compiling D:/codes/guiwuu/notes_of_7l7w/3-prolog/day1/5-exercise2.pl for byte code...
+D:/codes/guiwuu/notes_of_7l7w/3-prolog/day1/5-exercise2.pl compiled, 10 lines read - 1483 bytes written, 12 ms
+
+yes
+| ?- musician(Musician, guitar).
+
+Musician = armorm ? a
+
+Musician = diancang
+
+yes
+| ?- musician_suggest(Musician, guitar, rock).
+
+Musician = armorm ? a
+
+no
+| ?- 

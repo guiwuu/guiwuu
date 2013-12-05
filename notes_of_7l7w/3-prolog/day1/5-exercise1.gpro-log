@@ -1,0 +1,17 @@
+GNU Prolog 1.4.4 (64 bits)
+Compiled Apr 23 2013, 16:41:01 with x86_64-w64-mingw32-gcc
+By Daniel Diaz
+Copyright (C) 1999-2013 Daniel Diaz
+| ?- ['D:/codes/guiwuu/notes_of_7l7w/3-prolog/day1/5-exercise1.pl'].
+compiling D:/codes/guiwuu/notes_of_7l7w/3-prolog/day1/5-exercise1.pl for byte code...
+D:/codes/guiwuu/notes_of_7l7w/3-prolog/day1/5-exercise1.pl compiled, 2 lines read - 5640 bytes written, 13 ms
+
+yes
+| ?- book_author(Book, "Haruki Murakami").
+
+Book = norwegianwood ? a
+
+Book = [87,104,97,116,32,73,32,84,97,108,107,32,65,98,111,117,116,32,87,104,101,110,32,73,32,84,97,108,107,32,65,98,111,117,116,32,82,117,110,110,105,110,103]
+
+yes
+| ?- 

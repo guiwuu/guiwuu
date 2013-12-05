@@ -1,0 +1,46 @@
+GNU Prolog 1.4.4 (64 bits)
+Compiled Apr 23 2013, 16:41:01 with x86_64-w64-mingw32-gcc
+By Daniel Diaz
+Copyright (C) 1999-2013 Daniel Diaz
+| ?- ['D:/codes/guiwuu/notes_of_7l7w/3-prolog/day1/4-unification.pl'].
+compiling D:/codes/guiwuu/notes_of_7l7w/3-prolog/day1/4-unification.pl for byte code...
+D:/codes/guiwuu/notes_of_7l7w/3-prolog/day1/4-unification.pl compiled, 4 lines read - 799 bytes written, 15 ms
+
+yes
+| ?- dorothy(lion, tiger, bear).
+
+yes
+| ?- dorothy(lionx, tiger, bear).
+
+no
+| ?- dorothy(tiger, tiger, bear).
+
+no
+| ?- dorothy(Tiger, tiger, bear).
+
+Tiger = lion
+
+yes
+| ?- dorothy(One, Two, Three).
+
+One = lion
+Three = bear
+Two = tiger
+
+yes
+| ?- twin_cats(One, Two).
+
+One = lion
+Two = lion ? ;
+
+One = lion
+Two = tiger ? ;
+
+One = tiger
+Two = lion ? a
+
+One = tiger
+Two = tiger
+
+(15 ms) yes
+| ?- 
