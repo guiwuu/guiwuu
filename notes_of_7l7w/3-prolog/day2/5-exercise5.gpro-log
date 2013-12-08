@@ -1,0 +1,100 @@
+GNU Prolog 1.4.4 (64 bits)
+Compiled Apr 23 2013, 16:41:01 with x86_64-w64-mingw32-gcc
+By Daniel Diaz
+Copyright (C) 1999-2013 Daniel Diaz
+| ?- ['D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/5-exercise5.pl'].
+compiling D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/5-exercise5.pl for byte code...
+D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/5-exercise5.pl:1: warning: singleton variables [N] for cut/4
+D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/5-exercise5.pl compiled, 10 lines read - 3902 bytes written, 18 ms
+
+yes
+| ?- cut([],0,L1,L2).
+
+L1 = []
+L2 = []
+
+yes
+| ?- cut([1],0,L1,L2).
+
+L1 = []
+L2 = [1] ? a
+
+(15 ms) no
+| ?- cut([1],1,L1,L2).
+
+L1 = [1]
+L2 = [] ? a
+
+no
+| ?- cut([1],2,L1,L2).
+
+L1 = [1]
+L2 = [] ? a
+
+(16 ms) no
+| ?- cut([1,2],2,L1,L2).
+
+L1 = [1,2]
+L2 = [] ? a
+
+(15 ms) no
+| ?- cut([1,2,3],2,L1,L2).
+
+L1 = [1,2]
+L2 = [3] ? a
+
+(16 ms) no
+| ?- cut([1,5,2,3],2,L1,L2).
+
+L1 = [1,2]
+L2 = [5,3] ? a
+
+no
+| ?- cut([1,5,2,3],1,L1,L2).
+
+L1 = [1]
+L2 = [5,2,3] ? a
+
+no
+| ?- cut([8,5,2,3],4,L1,L2).
+
+L1 = [2,3]
+L2 = [8,5] ? a
+
+no
+| ?- quicksort([], Sorted).
+
+Sorted = []
+
+yes
+| ?- quicksort([1], Sorted).
+
+Sorted = [1] ? a
+
+no
+| ?- quicksort([1,2], Sorted).
+
+Sorted = [1,2] ? a
+
+no
+| ?- quicksort([1,2,1], Sorted).
+
+Sorted = [1,1,2] ? a
+
+no
+| ?- quicksort([2,1], Sorted).
+
+Sorted = [1,2] ? a
+
+no
+| ?- quicksort([2,1,8], Sorted).
+
+Sorted = [1,2,8] ? a
+
+no
+| ?- quicksort([2,1,8,1,8], Sorted).
+
+Sorted = [1,1,2,8,8] ? a
+
+(16 ms) no
+| ?- 

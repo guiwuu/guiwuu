@@ -1,0 +1,8 @@
+concatenate([1,2],[3],What)
+=>What = [1|TAIL2-A], concatenate(1|[2]], [3], [1|Tail2-A]) :- concatenate([2], [3], Tail2-A)
+=>Tail2-A = [2|TAIL2-B], concatenate([2|[]], [3], [2|TAIL2-B]) :- concatenate([], [3], Tail2-B)
+=>Tail2-B = Tail2-C, concatenate([], [3], Tail2-C) :- concatenate([], [3], [3])
+=>Tail2-C = [3]
+=>Tail2-B = Tail2-C = [3]
+=>TAIL2-A = [2|TAIL2-B] = [2,3]
+=>What = [1|TAIL2-A] = [1, 2, 3]

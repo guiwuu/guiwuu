@@ -1,0 +1,57 @@
+GNU Prolog 1.4.4 (64 bits)
+Compiled Apr 23 2013, 16:41:01 with x86_64-w64-mingw32-gcc
+By Daniel Diaz
+Copyright (C) 1999-2013 Daniel Diaz
+| ?- ['D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/4-concatstep1.pl'].
+compiling D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/4-concatstep1.pl for byte code...
+D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/4-concatstep1.pl compiled, 0 lines read - 327 bytes written, 11 ms
+
+yes
+| ?- concatenate([], [harry], What).
+
+What = [harry]
+
+yes
+| ?- ['D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/4-concatstep2.pl'].
+compiling D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/4-concatstep2.pl for byte code...
+D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/4-concatstep2.pl compiled, 1 lines read - 514 bytes written, 12 ms
+warning: D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/4-concatstep2.pl:1: redefining procedure concatenate/3
+         D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/4-concatstep1.pl:1: previous definition
+
+yes
+| ?- concatenate([malfoy], [pottery], What).
+
+What = [malfoy,pottery]
+
+yes
+| ?- ['D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/4-concatstep3.pl'].
+compiling D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/4-concatstep3.pl for byte code...
+D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/4-concatstep3.pl compiled, 3 lines read - 1173 bytes written, 15 ms
+
+yes
+| ?- concatenate([malfoy, granger], [pottery], What).
+
+What = [malfoy,granger,pottery] ? ;
+
+no
+| ?- concatenate([malfoy, granger, pet], [pottery], What).
+
+What = [malfoy,granger,pet,pottery]
+
+(16 ms) yes
+| ?- ['D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/4-concat.pl'].
+compiling D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/4-concat.pl for byte code...
+D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/4-concat.pl compiled, 1 lines read - 526 bytes written, 14 ms
+
+yes
+| ?- concatenate([a, b, c], [e, f], What).
+
+What = [a,b,c,e,f]
+
+yes
+| ?- concatenate([a, b, c], What, [a, b, c, d]).
+
+What = [d]
+
+yes
+| ?- 

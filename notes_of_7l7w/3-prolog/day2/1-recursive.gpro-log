@@ -1,0 +1,34 @@
+GNU Prolog 1.4.4 (64 bits)
+Compiled Apr 23 2013, 16:41:01 with x86_64-w64-mingw32-gcc
+By Daniel Diaz
+Copyright (C) 1999-2013 Daniel Diaz
+| ?- ['D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/1-recursive.pl'].
+compiling D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/1-recursive.pl for byte code...
+D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/1-recursive.pl compiled, 4 lines read - 826 bytes written, 12 ms
+
+yes
+| ?- ancestor(john_boy_sr, john_boy_jr).
+
+true ? a
+
+no
+| ?- ancestor(zeb, john_boy_jr).
+
+true ? a
+
+no
+| ?- ancestor(zeb, Who).
+
+Who = john_boy_sr ? a
+
+Who = john_boy_jr
+
+(16 ms) no
+| ?- ancestor(Who, john_boy_jr).
+
+Who = john_boy_sr ? a
+
+Who = zeb
+
+no
+| ?- 

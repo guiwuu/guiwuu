@@ -1,0 +1,31 @@
+GNU Prolog 1.4.4 (64 bits)
+Compiled Apr 23 2013, 16:41:01 with x86_64-w64-mingw32-gcc
+By Daniel Diaz
+Copyright (C) 1999-2013 Daniel Diaz
+| ?- ['D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/3-list_math.pl'].
+compiling D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/3-list_math.pl for byte code...
+D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/3-list_math.pl:2: warning: singleton variables [Head] for count/2
+D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/3-list_math.pl compiled, 6 lines read - 1634 bytes written, 15 ms
+
+yes
+| ?- count(What, []).
+
+What = 0 ? a
+
+no
+| ?- count(What, [1]).
+
+What = 1 ? a
+
+no
+| ?- sum(What, [1, 2, 3]).
+
+What = 6 ? ;
+
+no
+| ?- average(What, [1, 2, 3]).
+
+What = 2.0 ? ;
+
+no
+| ?- 

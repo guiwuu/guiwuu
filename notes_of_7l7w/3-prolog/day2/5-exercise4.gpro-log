@@ -1,0 +1,53 @@
+GNU Prolog 1.4.4 (64 bits)
+Compiled Apr 23 2013, 16:41:01 with x86_64-w64-mingw32-gcc
+By Daniel Diaz
+Copyright (C) 1999-2013 Daniel Diaz
+| ?- ['D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/5-exercise4.pl'].
+compiling D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/5-exercise4.pl for byte code...
+D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/5-exercise4.pl compiled, 4 lines read - 1097 bytes written, 12 ms
+
+yes
+| ?- min(1,1,1).
+
+true ? a
+
+no
+| ?- min(1,1,Min).
+
+Min = 1 ? a
+
+no
+| ?- min(1,2,Min).
+
+Min = 1 ? a
+
+no
+| ?- min(3,2,Min).
+
+Min = 2
+
+yes
+| ?- min([],Min).
+
+no
+| ?- min([1],Min).
+
+Min = 1 ? a
+
+no
+| ?- min([3, 4],Min).
+
+Min = 3 ? a
+
+no
+| ?- min([3, 4, 6],Min).
+
+Min = 3 ? a
+
+no
+| ?- min([9, 4, 6],Min).
+
+Min = 4 ? a
+
+no
+| ?- 

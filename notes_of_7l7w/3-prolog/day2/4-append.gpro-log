@@ -1,0 +1,36 @@
+GNU Prolog 1.4.4 (64 bits)
+Compiled Apr 23 2013, 16:41:01 with x86_64-w64-mingw32-gcc
+By Daniel Diaz
+Copyright (C) 1999-2013 Daniel Diaz
+| ?- append([oil], [water], [oil, water]).
+
+yes
+| ?- append([oil], [water], [oil, slick]).
+
+no
+| ?- append([tiny], [bubbles], What).
+
+What = [tiny,bubbles]
+
+yes
+| ?- append([dessert_topping], Who, [dessert_topping, floor_wax]).
+
+Who = [floor_wax]
+
+yes
+| ?- append(One, Two, [apples, oranges, bananas]).
+
+One = []
+Two = [apples,oranges,bananas] ? a
+
+One = [apples]
+Two = [oranges,bananas]
+
+One = [apples,oranges]
+Two = [bananas]
+
+One = [apples,oranges,bananas]
+Two = []
+
+(15 ms) yes
+| ?- 

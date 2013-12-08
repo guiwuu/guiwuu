@@ -1,0 +1,37 @@
+GNU Prolog 1.4.4 (64 bits)
+Compiled Apr 23 2013, 16:41:01 with x86_64-w64-mingw32-gcc
+By Daniel Diaz
+Copyright (C) 1999-2013 Daniel Diaz
+| ?- ['D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/5-exercise2.pl'].
+compiling D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/5-exercise2.pl for byte code...
+D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/5-exercise2.pl compiled, 1 lines read - 1336 bytes written, 12 ms
+
+yes
+| ?- hanoi(1, left, center, right).
+left => right
+
+true ? 
+Action (; for next solution, a for all solutions, RET to stop) ? a
+
+(15 ms) no
+| ?- hanoi(2, left, center, right).
+left => center
+left => right
+center => right
+
+true ? a
+
+no
+| ?- hanoi(3, left, center, right).
+left => right
+left => center
+right => center
+left => right
+center => left
+center => right
+left => right
+
+true ? a
+
+(16 ms) no
+| ?- 

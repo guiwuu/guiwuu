@@ -1,0 +1,30 @@
+GNU Prolog 1.4.4 (64 bits)
+Compiled Apr 23 2013, 16:41:01 with x86_64-w64-mingw32-gcc
+By Daniel Diaz
+Copyright (C) 1999-2013 Daniel Diaz
+| ?- reverse([1,2,3], X).
+
+X = [3,2,1]
+
+(16 ms) yes
+| ?- ['D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/5-exercise3.pl'].
+compiling D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/5-exercise3.pl for byte code...
+D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/5-exercise3.pl compiled, 1 lines read - 794 bytes written, 14 ms
+
+yes
+| ?- overturn([1],X).
+
+X = [1] ? a
+
+no
+| ?- overturn([1,2],X).
+
+X = [2,1] ? a
+
+no
+| ?- overturn([1,2,3], X).
+
+X = [3,2,1] ? a
+
+no
+| ?- 

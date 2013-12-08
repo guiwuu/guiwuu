@@ -1,0 +1,60 @@
+GNU Prolog 1.4.4 (64 bits)
+Compiled Apr 23 2013, 16:41:01 with x86_64-w64-mingw32-gcc
+By Daniel Diaz
+Copyright (C) 1999-2013 Daniel Diaz
+| ?- ['D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/5-exercise1.pl'].
+compiling D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/5-exercise1.pl for byte code...
+D:/codes/guiwuu/notes_of_7l7w/3-prolog/day2/5-exercise1.pl compiled, 2 lines read - 1210 bytes written, 11 ms
+
+yes
+| ?- fibonacci(1, What).
+
+What = 1 ? ;
+
+no
+| ?- fibonacci(2, What).
+
+What = 1 ? ;
+
+no
+| ?- fibonacci(3, What).
+
+What = 2 ? ;
+
+(16 ms) no
+| ?- fibonacci(4, What).
+
+What = 3 ? ;
+
+no
+| ?- fibonacci(5, What).
+
+What = 5 ? ;
+
+(16 ms) no
+| ?- fibonacci(6, What).
+
+What = 8 ? ;
+
+no
+| ?- fibonacci(7, What).
+
+What = 13 ? ;
+
+no
+| ?- fibonacci(8, What).
+
+What = 21 ? ;
+
+no
+| ?- fibonacci(9, What).
+
+What = 34 ? ;
+
+no
+| ?- fibonacci(10, What).
+
+What = 55 ? ;
+
+no
+| ?- 
