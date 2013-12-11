@@ -1,0 +1,1 @@
+Prolog和人工智能 http://hyry.dip.jp/tech/book/page/prolog/index.html?language=ja

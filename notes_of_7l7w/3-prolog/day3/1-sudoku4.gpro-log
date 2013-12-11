@@ -1,0 +1,58 @@
+GNU Prolog 1.4.4 (64 bits)
+Compiled Apr 23 2013, 16:41:01 with x86_64-w64-mingw32-gcc
+By Daniel Diaz
+Copyright (C) 1999-2013 Daniel Diaz
+| ?- ['D:/codes/guiwuu/notes_of_7l7w/3-prolog/day3/1-sudoku4step1.pl'].
+compiling D:/codes/guiwuu/notes_of_7l7w/3-prolog/day3/1-sudoku4step1.pl for byte code...
+D:/codes/guiwuu/notes_of_7l7w/3-prolog/day3/1-sudoku4step1.pl compiled, 0 lines read - 311 bytes written, 16 ms
+
+yes
+| ?- sudoku([4, 1, 2, 3,
+             2, 3, 4, 1,
+             1, 2, 3, 4,
+             3, 4, 1, 2],
+             Solution).
+
+Solution = [4,1,2,3,2,3,4,1,1,2,3,4,3,4,1,2]
+
+yes
+| ?- sudoku([1, 2, 3], Solution).
+
+Solution = [1,2,3]
+
+yes
+| ?- sudoku([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6], Solution).
+
+Solution = [1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6]
+
+yes
+| ?- ['D:/codes/guiwuu/notes_of_7l7w/3-prolog/day3/1-sudoku4step2.pl'].
+compiling D:/codes/guiwuu/notes_of_7l7w/3-prolog/day3/1-sudoku4step2.pl for byte code...
+D:/codes/guiwuu/notes_of_7l7w/3-prolog/day3/1-sudoku4step2.pl:1-4: warning: singleton variables [S11,S12,S13,S14,S21,S22,S23,S24,S31,S32,S33,S34,S41,S42,S43,S44] for sudoku/2
+D:/codes/guiwuu/notes_of_7l7w/3-prolog/day3/1-sudoku4step2.pl compiled, 3 lines read - 1093 bytes written, 13 ms
+warning: D:/codes/guiwuu/notes_of_7l7w/3-prolog/day3/1-sudoku4step2.pl:1: redefining procedure sudoku/2
+         D:/codes/guiwuu/notes_of_7l7w/3-prolog/day3/1-sudoku4step1.pl:1: previous definition
+
+(15 ms) yes
+| ?- sudoku([1, 2, 3], Solution).
+
+no
+| ?- sudoku([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6], Solution).
+
+no
+| ?- ['D:/codes/guiwuu/notes_of_7l7w/3-prolog/day3/1-sudoku4.pl'].
+compiling D:/codes/guiwuu/notes_of_7l7w/3-prolog/day3/1-sudoku4.pl for byte code...
+D:/codes/guiwuu/notes_of_7l7w/3-prolog/day3/1-sudoku4.pl compiled, 10 lines read - 4784 bytes written, 12 ms
+warning: D:/codes/guiwuu/notes_of_7l7w/3-prolog/day3/1-sudoku4.pl:4: redefining procedure sudoku/2
+         D:/codes/guiwuu/notes_of_7l7w/3-prolog/day3/1-sudoku4step2.pl:1: previous definition
+
+yes
+| ?- sudoku([_, _, 2, 3,
+             _, _, _, _,
+             _, _, _, _,
+             3, 4, _, _], Solution).
+
+Solution = [4,1,2,3,2,3,4,1,1,2,3,4,3,4,1,2]
+
+yes
+| ?- 
