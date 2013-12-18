@@ -1,1 +1,1 @@
-Wakatta!'s Blogs about this Book: http://blog.wakatta.jp/blog/2011/10/11/seven-languages-in-seven-weeks/
+Wakatta!'s Blogs: http://blog.wakatta.jp/blog/2011/10/11/seven-languages-in-seven-weeks/
