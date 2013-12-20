@@ -2,11 +2,32 @@ class TicTacToe(first : String) {
 
 	val board = Array(" ", " ", " ", " ", " ", " ", " ", " ", " ")
 
-	def fill(token : String, x : Int, y : Int) {
+	def fill(token : String, x : Int, y : Int) = {
 		board(x+y*3) = token
 	}
 
-	def render() {
+	def player() : String = {
+		var countO = 0
+		var countX = 0
+		for(k <- 0 until 9) {
+			var token = board(k)
+			if (token == "O") {
+				countO = countO + 1
+			} else if (token == "X") {
+				countX = countX + 1
+			}
+		}
+
+		if (countO == countX) {
+			return first
+		} else if (countO > countX) {
+			return "X"
+		} else {
+			return "O"
+		}
+	}
+
+	def render() = {
 		for(i <- 0 until 3) {
 			print("|")
 			for(j <- 0 until 3) {
@@ -15,9 +36,10 @@ class TicTacToe(first : String) {
 			}
 			println
 		}
+		println(draw)
 	}
 
-	def draw() {
+	def draw() : String = {
 		var lines = List[List[(Int, Int)]]()
 		for(i <- 0 until 3) {
 			var row = List[(Int, Int)]()
@@ -39,16 +61,10 @@ class TicTacToe(first : String) {
 		lines = lines :+ diag2
 
 		var countBlank = 0
-		var countO = 0
-		var countX = 0
 		for(k <- 0 until 9) {
 			var token = board(k)
 			if (token == " ") {
 				countBlank = countBlank + 1
-			} else if (token == "O") {
-				countO = countO + 1
-			} else {
-				countX = countX + 1
 			}
 		}
 
@@ -72,67 +88,95 @@ class TicTacToe(first : String) {
 				}
 			}
 		}
+		
 		if (lineO && lineX) {
-			println("Winner is " + first)
+			return "Winner is " + first
 		} else if (lineO) {
-			println("Winner is O")
+			return "Winner is O"
 		} else if (lineX) {
-			println("Winner is X")
+			return "Winner is X"
 		} else if (countBlank == 0) {
-			println("Tired")
+			return "Tired"
 		} else if (countBlank == 9) {
-			println("New: " + first)
-		} else if (countO == countX) {
-			println("Continue: " + first)
-		} else if (countO > countX) {
-			println("Continue: X")
+			return "New: " + first
 		} else {
-			println("Continue: O")
+			return "Continue: " + player
 		}
 	}
 }
 
 val ttt = new TicTacToe("O")
 ttt.render
-ttt.draw
 ttt.fill("O", 0, 2)
 ttt.render
-ttt.draw
 ttt.fill("X", 1, 1)
 ttt.render
-ttt.draw
 ttt.fill("O", 1, 2)
 ttt.render
-ttt.draw
 ttt.fill("X", 2, 2)
 ttt.render
-ttt.draw
 ttt.fill("O", 2, 0)
 ttt.render
-ttt.draw
 ttt.fill("X", 0, 0)
 ttt.render
-ttt.draw
 
 ttt.fill("X", 0, 1)
 ttt.render
-ttt.draw
 ttt.fill("X", 2, 1)
 ttt.render
-ttt.draw
 ttt.fill("O", 2, 2)
 ttt.render
-ttt.draw
 
 ttt.fill("O", 1, 1)
 ttt.render
-ttt.draw
 ttt.fill("X", 1, 2)
 ttt.render
-ttt.draw
 ttt.fill("X", 2, 0)
 ttt.render
-ttt.draw
 ttt.fill("O", 1, 0)
 ttt.render
-ttt.draw
+
+class Game() {
+	var first = ""
+	var second = ""
+	var ttt = new TicTacToe("")
+	var x = 0
+	var y = 0
+	
+	def start() = {
+		println("Please choose who to play first: X or O?")
+		first = readLine
+		ttt = new TicTacToe(first)
+		if (first == "X") {
+			second = "O"
+		} else {
+			second = "X"
+		}
+		ttt.render
+	}
+
+	def play() = {
+		println("Please input where to fill, x=?")
+		x = readInt
+		println("Please input where to fill, y=?")
+		y = readInt
+		ttt.fill(ttt.player, x, y)
+		ttt.render
+	}
+
+	def finished() : Boolean = {
+		val draw = ttt.draw
+		if (draw == "Tired" || draw.startsWith("Winner")) {
+			return true
+		} else {
+			return false
+		}
+	}
+
+}
+
+var game = new Game()
+game.start
+while(!game.finished) {
+	game.play
+}
