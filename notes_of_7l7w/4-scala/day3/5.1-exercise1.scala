@@ -12,10 +12,6 @@ object PageLoader {
 	}
 }
 
-val urls = List("http://www.apple.com", "http://www.yahoo.com", "http://www.amazon.cn", "http://www.weibo.com",
-	"http://www.ask.com", "http://www.stackoverflow.com", "http://www.zhihu.com", "http://www.douban.com",
-	"http://www.weather.com", "http://www.apache.org", "http://www.foxnews.com", "http://www.wikipedia.com", "http://www.scala-lang.org")
-
 def timeMethod(method: () => Unit) = {
 	val start = System.nanoTime
 	method()
@@ -38,6 +34,10 @@ def getPageSizeConcurrently() = {
 		}
 	}
 }
+
+val urls = List("http://www.apple.com", "http://www.yahoo.com", "http://www.amazon.cn", "http://www.weibo.com",
+	"http://www.ask.com", "http://www.stackoverflow.com", "http://www.zhihu.com", "http://www.douban.com",
+	"http://www.apache.org", "http://www.foxnews.com", "http://www.wikipedia.com", "http://www.scala-lang.org")
 
 println("Running...")
 timeMethod{ getPageSizeConcurrently }
