@@ -8,7 +8,7 @@ object PageLoader {
 	val reg2 = """http://[^/]*/?""".r
 	val reg3 = """href=['"][^'"]*['"]""".r
 
-	def parse(url: String, level: Int): (Int, List[String]) = {
+	def parse(url: String): (Int, List[String]) = {
 		var links = List[String]()
 		try {
 			val html = scala.io.Source.fromURL(url)(Codec.UTF8).mkString
@@ -60,12 +60,12 @@ def getPageSizeConcurrently() = {
 	val caller = self
 	for(url <- urls) {
 		actor {
-			caller ! (url, PageLoader.parse(url, 0))
+			caller ! (url, 0, PageLoader.parse(url))
 		}
 	}
 	for(i <- 1 to urls.size) {
 		receive {
-			case (a, (b, c)) => {
+			case (a, 0, (b, c)) => {
 				val url = a.asInstanceOf[String]	
 				val size = b.asInstanceOf[Int]
 				val links = c.asInstanceOf[List[String]]
@@ -80,13 +80,13 @@ def countSecondLinkConcurrently(links : List[String]) : Int = {
 	val caller = self
 	for(url <- links) {
 		actor {
-			caller ! (url, PageLoader.parse(url, 1))
+			caller ! (url, 1, PageLoader.parse(url))
 		}
 	}
 	val secondLinkCount = new java.util.concurrent.atomic.AtomicInteger()
 	for(i <- 1 to links.size) {
 		receive {
-			case (a, (b, c)) => {
+			case (a, 1, (b, c)) => {
 				secondLinkCount.getAndAdd(c.asInstanceOf[List[String]].length)
 			}
 		}
@@ -94,7 +94,8 @@ def countSecondLinkConcurrently(links : List[String]) : Int = {
 	return secondLinkCount.intValue
 }
 
-val urls = List("http://www.scala-lang.org")
+val urls = List("http://www.apple.com", "http://www.weibo.com", "http://www.zhihu.com",
+	"http://www.scala-lang.org")
 
 println("Running...")
 timeMethod{ 
