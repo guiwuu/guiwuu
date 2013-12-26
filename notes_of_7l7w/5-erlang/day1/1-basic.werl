@@ -1,0 +1,26 @@
+Erlang R16B03 (erts-5.10.4) [64-bit] [smp:8:8] [async-threads:10]
+
+Eshell V5.10.4  (abort with ^G)
+1> % This is a comment
+1> 2 + 2.
+4
+2> 2 + 2.0.
+4.0
+3> "string".
+"string"
+4> [1, 2, 3].
+[1,2,3]
+5> [72, 97, 32, 72, 97, 32, 72, 97].
+"Ha Ha Ha"
+6> 4 + "string".
+** exception error: an error occurred when evaluating an arithmetic expression
+     in operator  +/2
+        called as 4 + "string"
+7> variable = 4.
+** exception error: no match of right hand side value 4
+8> Var = 1.
+1
+9> Var = 2.
+** exception error: no match of right hand side value 2
+10> Var.
+1

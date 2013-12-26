@@ -1,0 +1,14 @@
+Erlang R16B03 (erts-5.10.4) [64-bit] [smp:8:8] [async-threads:10]
+
+Eshell V5.10.4  (abort with ^G)
+2> c(matching_function).
+{ok,matching_function}
+3> matching_function:number(one).
+1
+4> matching_function:number(two).
+2
+5> matching_function:number(three).
+3
+6> matching_function:number(four). 
+** exception error: no function clause matching 
+                    matching_function:number(four) (matching_function.erl, line 4)

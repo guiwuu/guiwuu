@@ -1,0 +1,59 @@
+Erlang R16B03 (erts-5.10.4) [64-bit] [smp:8:8] [async-threads:10]
+
+Eshell V5.10.4  (abort with ^G)
+1> Person = {person, {name, "Agent Simth"}, {profession, "Killing programs"}}.
+{person,{name,"Agent Simth"},
+        {profession,"Killing programs"}}
+2> {person, {name, Name}, {profession, Profession}}=Person.                   
+{person,{name,"Agent Simth"},
+        {profession,"Killing programs"}}
+3> Name.
+"Agent Simth"
+4> Profession.
+"Killing programs"
+5> [Head | Tail] = [1, 2, 3].
+[1,2,3]
+6> Head.
+1
+7> Tail.
+[2,3]
+8> [One, Two|Rest] = [1, 2, 3].
+[1,2,3]
+9> One.
+1
+10> Two.
+2
+11> Rest.
+[3]
+12> [X|Rest] = [].
+** exception error: no match of right hand side value []
+13> one = 1.
+** exception error: no match of right hand side value 1
+14> [1, 2, 3] = [Head | Tail].
+[1,2,3]
+15> Head.
+1
+16> Tail.
+[2,3]
+17> W = 1.
+1
+18> X = 2.
+2
+19> Y = 3.
+3
+20> Z = 4.
+4
+21> All = <<W:3, X:3, Y:5, Z:5>>.
+<<"(d">>
+22> All = <<A:3, B:3, C:5, D:5>>.
+* 1: variable 'A' is unbound
+24> <<A:3, B:3, C:5, D:5>> = All.
+<<"(d">>
+25> A.
+1
+26> B.
+2
+27> C.
+3
+28> D.
+4

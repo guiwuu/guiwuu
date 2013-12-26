@@ -1,0 +1,24 @@
+Erlang R16B03 (erts-5.10.4) [64-bit] [smp:8:8] [async-threads:10]
+
+Eshell V5.10.4  (abort with ^G)
+1> red.
+red
+2> Pill = blue.
+blue
+3> Pill.
+blue
+4> [1, 2, 3].
+[1,2,3]
+5> [1, 2, "three"].
+[1,2,"three"]
+6> List = [1, 2, 3]。
+[1,2,3]
+7> {one, two, three}.
+{one,two,three}
+8> Origin = {0, 0}.
+{0,0}
+9> {name, "Spaceman Spiff"}.
+{name,"Spaceman Spiff"}
+10> {comic_strip, {name, "Calvin and Hobbes"}, {character, "Spaceman Spiff"}}.
+{comic_strip,{name,"Calvin and Hobbes"},
+             {character,"Spaceman Spiff"}}
