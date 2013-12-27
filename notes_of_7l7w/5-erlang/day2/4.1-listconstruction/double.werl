@@ -1,0 +1,15 @@
+Erlang R16B03 (erts-5.10.4) [64-bit] [smp:8:8] [async-threads:10]
+
+Eshell V5.10.4  (abort with ^G)
+1> c("double").
+{ok,double}
+2> double:double_all([1, 2, 3]).
+[2,4,6]
+3> [1| [2,3]].
+[1,2,3]
+4> [[2,3] | 1].
+[[2,3]|1]
+5> [[]|[2,3]].
+[[],2,3]
+6> [1|[]].    
+[1]

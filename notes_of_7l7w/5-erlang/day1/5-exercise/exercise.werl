@@ -1,0 +1,27 @@
+Erlang R16B03 (erts-5.10.4) [64-bit] [smp:8:8] [async-threads:10]
+
+Eshell V5.10.4  (abort with ^G)
+1> c("exercise").
+{ok,exercise}
+3> exercise:strlen("").
+0
+4> exercise:strlen("1234").
+4
+5> exercise:strlen("abcdefghijklmnopqrs").
+19
+7> exercise:count(0).
+0
+8> exercise:count(1).
+1
+9> exercise:count(1999).
+1999
+10> exercise:count(-1).  
+-1
+11> exercise:count(-12222).
+-1
+13> exercise:log(success).
+success
+ok
+22> exercise:log({error, "u got me"}).
+error: u got me
+ok

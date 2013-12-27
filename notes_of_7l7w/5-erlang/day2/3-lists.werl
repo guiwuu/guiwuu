@@ -1,0 +1,59 @@
+Erlang R16B03 (erts-5.10.4) [64-bit] [smp:8:8] [async-threads:10]
+
+Eshell V5.10.4  (abort with ^G)
+1> Numbers = [1, 2, 3, 4].
+[1,2,3,4]
+2> lists:foreach(fun(Number) -> io:format("~p~n", [Number]) end, Numbers).
+1
+2
+3
+4
+ok
+3> Print = fun(X) -> io:format("~p~n", [X]) end.
+#Fun<erl_eval.6.80484245>
+4> lists:foreach(Print, Numbers).
+1
+2
+3
+4
+ok
+5> lists:map(fun(X) -> X + 1 end, Numbers).
+[2,3,4,5]
+6> Small = fun(X) -> X < 3 end.
+#Fun<erl_eval.6.80484245>
+7> Small(4).
+false
+8> Small(1).
+true
+9> lists:filter(Small, Numbers).
+[1,2]
+10> lists:all(Small, [0, 1, 2]).
+true
+11> lists:all(Small, [0, 1, 2, 3]).
+false
+12> lists:any(Small, [0, 1, 2, 3]).
+true
+13> lists:any(Small, [3, 4, 5]).   
+false
+14> lists:any(Small, []).       
+false
+15> lists:all(Small, []).
+true
+16> lists:takewhile(Small, Numbers).
+[1,2]
+17> lists:dropwhile(Small, Numbers).
+[3,4]
+18> lists:takewhile(Small, [1, 2, 1, 4, 1]).
+[1,2,1]
+19> lists:dropwhile(Small, [1, 2, 1, 4, 1]).
+[4,1]
+20> Numbers.
+[1,2,3,4]
+21> lists:foldl(fun(X, Sum) -> X + Sum end, 0, Numbers).
+10
+22> Adder = fun(ListItem, SumSoFar) -> ListItem + SumSoFar end.
+#Fun<erl_eval.12.80484245>
+23> InitailSum = 0.
+0
+24> lists:foldl(Adder, InitailSum, Numbers).
+10

@@ -1,0 +1,9 @@
+Erlang R16B03 (erts-5.10.4) [64-bit] [smp:8:8] [async-threads:10]
+
+Eshell V5.10.4  (abort with ^G)
+1> Negate = fun(I) -> -I end.
+#Fun<erl_eval.6.80484245>
+2> Negate(1).
+-1
+3> Negate(-1).
+1

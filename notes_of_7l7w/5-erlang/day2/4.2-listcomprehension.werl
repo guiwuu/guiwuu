@@ -1,0 +1,26 @@
+Erlang R16B03 (erts-5.10.4) [64-bit] [smp:8:8] [async-threads:10]
+
+Eshell V5.10.4  (abort with ^G)
+1> Fibs = [1, 1, 2, 3, 5].
+[1,1,2,3,5]
+2> Double = fun(X) -> X * 2 end.
+#Fun<erl_eval.6.80484245>
+3> lists:map(Double, Fibs). 
+[2,2,4,6,10]
+4> [Double(X) || X <- Fibs].
+[2,2,4,6,10]
+5> [X * 2 || X <- [1, 1, 2, 3, 5]].
+[2,2,4,6,10]
+6> Cart = [{pencil, 4, 0.25}, {pen, 1, 1.20}, {paper, 2, 0.25}].
+[{pencil,4,0.25},{pen,1,1.2},{paper,2,0.25}]
+8> WithTax = [{Product, Quantity, Price, Price * Quantity * 0.08} ||
+8>   {Product, Quantity, Price} <- Cart].                           
+[{pencil,4,0.25,0.08},{pen,1,1.2,0.096},{paper,2,0.25,0.04}]
+9> Cat = [{Product, Price} || {Product, _, Price} <- Cart].
+[{pencil,0.25},{pen,1.2},{paper,0.25}]
+10> DiscountedCat = [{Product, Price / 2} || {Product, Price} <- Cat].
+[{pencil,0.125},{pen,0.6},{paper,0.125}]
+11> [X || X <- [1,2,3,4], X < 4, X > 1].
+[2,3]
+12> [{X, Y} || X <- [1,2,3,4], X < 3, Y <- [5, 6]].     
+[{1,5},{1,6},{2,5},{2,6}]

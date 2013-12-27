@@ -1,0 +1,33 @@
+Erlang R16B03 (erts-5.10.4) [64-bit] [smp:8:8] [async-threads:10]
+
+Eshell V5.10.4  (abort with ^G)
+1> Animal = "dog".
+"dog"
+2> case Animal of          
+2>     "dog" -> underdog;  
+2>     "cat" -> thundercat 
+2> end.
+underdog
+3> case Animal of
+3>     "elephant" -> dumbo;
+3>     _ -> something_else
+3> end.
+something_else
+4> if
+4>   ProgramsTerminated > 0 -> success;
+4>   ProgramsTerminated < 0 -> error
+4> end.
+* 2: variable 'ProgramsTerminated' is unbound
+5> X=0.
+0
+6> if 
+6>   X > 0 -> positive;
+6>   X < 0 -> negative
+6> end.
+** exception error: no true branch found when evaluating an if expression
+7> if                  
+7>   X > 0 -> positive;
+7>   X < 0 -> negative;
+7>   true -> zero
+7> end.
+zero
