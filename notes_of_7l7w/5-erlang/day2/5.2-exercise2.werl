@@ -1,0 +1,7 @@
+Erlang R16B03 (erts-5.10.4) [64-bit] [smp:8:8] [async-threads:10]
+
+Eshell V5.10.4  (abort with ^G)
+1> ShoppingList = [{book,2,12}, {apple,10,2}, {fish,3,200}].
+[{book,2,12},{apple,10,2},{fish,3,200}]
+5> ShoppingCheckout = [{I, Q*P} || {I, Q, P} <- ShoppingList].         
+[{book,24},{apple,20},{fish,600}]

@@ -1,0 +1,37 @@
+Erlang R16B03 (erts-5.10.4) [64-bit] [smp:8:8] [async-threads:10]
+
+Eshell V5.10.4  (abort with ^G)
+1> c("ttt").
+{ok,ttt}
+2> ttt:line([" ", " ", " "]).
+no_winner
+3> ttt:line([x, " ", " "]).  
+no_winner
+4> ttt:line([x, " ", x]).  
+no_winner
+5> ttt:line([x, o, x]).  
+cat
+6> ttt:line([x, x, x]).
+x
+7> ttt:line([o, o, o]).
+o
+8> ttt:board(["", "", "",
+8>            "", "", "",
+8>            "", "", ""]).
+no_winner
+9> ttt:board(["", x, "",   
+9>            "", x, o,    
+9>            "", x, o]).  
+x
+10> ttt:board([o, x, "",  
+10>            x, x, x,   
+10>            o, o, ""]).
+x
+11> ttt:board([o, x, "",  
+11>            x, o, x,   
+11>            x, "", o]).
+o
+12> ttt:board([o, x, x,   
+12>            x, o, o,   
+12>            x, o, x]). 
+cat
