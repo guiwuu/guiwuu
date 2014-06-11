@@ -1,0 +1,12 @@
+Erlang R16B03 (erts-5.10.4) [64-bit] [smp:8:8] [async-threads:10]
+
+Eshell V5.10.4  (abort with ^G)
+1> c(translate_service).
+{ok,translate_service}
+2> Translator = spawn(fun translate_service:loop/0).
+<0.40.0>
+3> translate_service:translate(Translator, "blanca").
+"white"
+4> translate_service:translate(Translator, "casa").  
+"house"
+5> 
