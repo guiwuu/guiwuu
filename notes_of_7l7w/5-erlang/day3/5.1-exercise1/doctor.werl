@@ -1,0 +1,38 @@
+Erlang R16B03 (erts-5.10.4) [64-bit] [smp:8:8] [async-threads:10]
+
+Eshell V5.10.4  (abort with ^G)
+1> c(translate_service).
+{ok,translate_service}
+2> c(doctor).
+{ok,doctor}
+3> Doctor = doctor:start(translator, fun translate_service:loop/0).
+Monitoring translator
+Staring translator
+<0.46.0>
+Registering translator with <0.47.0>
+Monitoring translator
+4> erlang:registered().
+[code_server,global_name_server,file_server_2,
+ kernel_safe_sup,application_controller,init,user_drv,user,
+ standard_error,error_logger,global_group,translator,
+ erl_prim_loader,standard_error_sup,rex,inet_db,kernel_sup]
+5> translate_service:translate(translator, "casa").
+"house"
+6> translate_service:translate(translator, "xxx"). 
+The translator <0.47.0> died with reason {"die at ",{22,24,36}}
+Restarting translator
+"I don't understand."
+Monitoring translator
+Staring translator
+Registering translator with <0.52.0>
+Monitoring translator
+7> translate_service:translate(translator, "casa").
+"house"
+8> translate_service:translate(translator, "xxx"). 
+The translator <0.52.0> died with reason {"die at ",{22,24,48}}
+Restarting translator
+"I don't understand."
+Monitoring translator
+Staring translator
+Registering translator with <0.55.0>
+Monitoring translator

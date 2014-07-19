@@ -1,0 +1,21 @@
+Erlang R16B03 (erts-5.10.4) [64-bit] [smp:8:8] [async-threads:10]
+
+Eshell V5.10.4  (abort with ^G)
+1> c(roulette).
+{ok,roulette}
+2> c(coroner). 
+{ok,coroner}
+3> Revolver = spawn(fun roulette:loop/0).
+<0.53.0>
+4> Coroner = spawn(fun coroner:loop/0).
+<0.55.0>
+5> Coroner ! {monitor, Revolver}.
+Monitoring process.
+{monitor,<0.53.0>}
+6> Revolver ! 1.
+click
+1
+7> Revolver ! 3.
+bang.
+The shooter <0.53.0> died with reason {roulette,die,at,{0,15,55}}3
+Start another one.

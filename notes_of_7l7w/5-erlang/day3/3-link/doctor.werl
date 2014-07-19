@@ -3,55 +3,25 @@ Erlang R16B03 (erts-5.10.4) [64-bit] [smp:8:8] [async-threads:10]
 Eshell V5.10.4  (abort with ^G)
 1> c(roulette).
 {ok,roulette}
-2> Gun = spawn(fun roulette:loop/0).
-<0.40.0>
-3> Gun ! 1.
-click
-1
-4> Gun ! 3.
-bang.
-3
-5> Gun ! 4.
-4
-6> Gun ! 1.
-1
-7> erlang:is_process_alive(Gun).
-false
-8> c(coroner). 
-{ok,coroner}
-9> Revolver = spawn(fun roulette:loop/0).
-<0.53.0>
-10> Coroner = spawn(fun coroner:loop/0).
-<0.55.0>
-11> Coroner ! {monitor, Revolver}.
-Monitoring process.
-{monitor,<0.53.0>}
-12> Revolver ! 1.
-click
-1
-13> Revolver ! 3.
-bang.
-The shooter <0.53.0> died with reason {roulette,die,at,{0,15,55}}3
-Start another one.
-14> c(doctor).
+2> c(doctor).
 {ok,doctor}
-15> Doc = spawn(fun doctor:loop/0).
+3> Doc = spawn(fun doctor:loop/0).
 <0.66.0>
-16> revolver ! 1.
+4> revolver ! 1.
 ** exception error: bad argument
      in operator  !/2
         called as revolver ! 1
-17> Doc ! new.
+5> Doc ! new.
 Creating and monitoring process.
 new
-18> revolver ! 1.
+6> revolver ! 1.
 click
 1
-19> revolver ! 3.
+7> revolver ! 3.
 bang.
 The shooter <0.70.0> died with reason {roulette,die,at,{0,23,12}}.3
  Restarting. 
 Creating and monitoring process.
-20> revolver ! 4.
+8> revolver ! 4.
 click
 4
