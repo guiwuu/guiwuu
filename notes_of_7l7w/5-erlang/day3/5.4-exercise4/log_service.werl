@@ -1,0 +1,15 @@
+Erlang R16B03 (erts-5.10.4) [64-bit] [smp:8:8] [async-threads:10]
+
+Eshell V5.10.4  (abort with ^G)
+1> c(log_service).
+{ok,log_service}
+2> log_service:new(logger1,"log1").
+{ok,<0.40.0>}
+3> log_service:new(logger2,"log2").
+{ok,<0.43.0>}
+4> log_service:log(logger1, "hello").
+ok
+5> log_service:log(logger2, "erlang").     
+ok
+6> log_service:log(logger2, test).    
+ok
