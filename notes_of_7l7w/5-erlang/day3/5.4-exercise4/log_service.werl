@@ -13,3 +13,7 @@ ok
 ok
 6> log_service:log(logger2, test).    
 ok
+7> file:read_file("log1").
+{ok,<<"{12,40,17} \"hello\"\n">>}
+8> file:read_file("log2").
+{ok,<<"{12,40,25} \"erlang\"\n{12,40,48} test\n">>}
