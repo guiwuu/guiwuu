@@ -25,11 +25,13 @@ connect(Listen) ->
     {ok, Socket} = gen_tcp:accept(Listen),
     inet:setopts(Socket, ?TCP_OPTS),
     spawn(fun() -> connect(Listen) end),
+    inet:setopts(Socket, ?TCP_OPTS),
+    gen_tcp:send(Socket, binary:list_to_bin(">")),
     recv(Socket),
     gen_tcp:close(Socket).
 
 recv(Socket) ->
-    inet:setopts(Socket, [{active, once}]),
+    inet:setopts(Socket, ?TCP_OPTS),
     receive
         {tcp, Socket, Data} ->
             io:format("~p ~p ~p~n", [inet:peername(Socket), erlang:localtime(), Data]),
