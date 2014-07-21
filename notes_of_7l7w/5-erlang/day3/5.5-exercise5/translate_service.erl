@@ -34,7 +34,7 @@ recv(Socket) ->
         {tcp, Socket, Data} ->
             io:format("~p ~p ~p~n", [inet:peername(Socket), erlang:localtime(), Data]),
             Result = translate(binary:bin_to_list(Data)),
-            gen_tcp:send(Socket, binary:list_to_bin(Result)),
+            gen_tcp:send(Socket, binary:list_to_bin("\r\n" ++ Result ++ "\r\n>")),
             recv(Socket);
         {tcp_closed, Socket} ->
             io:format("~p Client Disconnected.~n", [erlang:localtime()])
