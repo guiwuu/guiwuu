@@ -3,6 +3,7 @@
 -export([start/2]).
 -export([recv/1]).
 -export([connect/1]).
+-export([translate/1]).
 -export([init/1, handle_call/3, handle_cast/2, code_change/3, handle_info/2, terminate/2]).
 
 -define(TCP_OPTS, [binary, {packet, raw}, {nodelay, true}, {reuseaddr, true}, {active, once}]).
@@ -32,10 +33,18 @@ recv(Socket) ->
     receive
         {tcp, Socket, Data} ->
             io:format("~p ~p ~p~n", [inet:peername(Socket), erlang:localtime(), Data]),
-            gen_tcp:send(Socket, Data),
+            Result = translate(binary:bin_to_list(Data)),
+            gen_tcp:send(Socket, binary:list_to_bin(Result)),
             recv(Socket);
         {tcp_closed, Socket} ->
             io:format("~p Client Disconnected.~n", [erlang:localtime()])
+    end.
+
+translate(Word) ->
+    case Word of
+        "a" -> "apple";
+        "b" -> "boy";
+        _ -> "I don't understand: " ++ Word
     end.
 
 handle_call(_, _, _) ->
