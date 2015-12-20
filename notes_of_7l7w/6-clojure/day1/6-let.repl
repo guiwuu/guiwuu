@@ -1,0 +1,36 @@
+user=> (def line [[0 0] [10 20]])                                                                                                                                                                                                            
+#'user/line
+user=> line
+[[0 0] [10 20]]
+user=> (defn line-end [ln] (last ln))
+#'user/line-end
+user=> (line-end line)                                                                                                                                                                                                                        
+[10 20]
+user=> (defn line-end [[_ second]] second)                                                                                                                                                                                                    
+#'user/line-end
+user=> (line-end line)
+[10 20]
+user=> (def board [[:x :o :x] [:o :x :o] [:o :x :o]])
+#'user/board
+user=> (defn center [[_ [_ c _] _]] c)                                                                                                                                                                                                       
+#'user/center
+user=> (center board)
+:x
+
+user=> (defn center [[_ [_ c]]] c)
+#'user/center
+user=> (center board)
+:x
+user=> (defn center [board] (let [[_ [_ c]] board] c))
+#'user/center
+user=> (center board)
+:x
+user=> (def person {:name "Jabba" :profession "Gangster"})
+#'user/person
+user=> (let [{name :name} person] (str "The person's name is " name))                                                                                                                                                                        
+"The person's name is Jabba"                         
+user=> (def villains [{:name "Godzilla" :size "big"} {:name "Ebola" :size "small"}])
+#'user/villains
+user=> (let [[_ {name :name}] villains]                                                                                                                                                                                                      
+  #_=> (str "Name of the second villain: " name))
+"Name of the second villain: Ebola"

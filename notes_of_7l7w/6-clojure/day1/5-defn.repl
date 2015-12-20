@@ -1,0 +1,31 @@
+user=> (defn force-it [] (str "Use the force," "Luke."))
+#'user/force-it
+user=> (force-it)                                                                                                                                                                                                                            
+"Use the force,Luke."                                            
+user=> (defn force-it "The first function a young Jedi needs" [] (str "Use the force,Luke."))
+#'user/force-it
+user=> (doc force-it)
+-------------------------
+user/force-it
+([])
+  The first function a young Jedi needs
+nil
+user=> (defn force-it "The first function a young Jedi needs"                                                                                                                                                                                
+  #_=> [jedi] (str "Use the force," jedi))                                                                                                                                                                                         
+#'user/force-it
+user=> (force-it "Luke")                                                                                                                                                                                                                     
+"Use the force,Luke"
+
+user=> (force-it :Luke)                                                                                                                                                                                                                      
+"Use the force,:Luke"
+user=> (force-it Luke)                                                                                                                                                                                                                       
+
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: Luke in this context, compiling:(C:\cygwin\tmp\form-init5331941792749838380.clj:1:1) 
+user=> (doc str)
+-------------------------
+clojure.core/str
+([] [x] [x & ys])
+  With no args, returns the empty string. With one arg x, returns
+  x.toString().  (str nil) returns the empty string. With more than
+  one arg, returns the concatenation of the str values of the args.
+nil

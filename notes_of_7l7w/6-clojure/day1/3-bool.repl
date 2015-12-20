@@ -1,0 +1,34 @@
+user=> (= 1 1.0)
+false
+user=> (= 1 2)                                                                                                                                                                                                                               
+false
+user=> (< 1 2)
+true
+user=> (class true)
+java.lang.Boolean
+user=> (class (= 1 1))                                                                                                                                                                                                                       
+java.lang.Boolean
+user=> (if true (println "True it is."))
+True it is.
+nil
+user=> (if (> 1 2) (println "True it is."))                                                                                                                                                                                                  
+nil
+user=> (if false (println "true") (println "false"))
+false
+nil
+user=> (first ())
+nil
+user=> (if 0 (println "true"))
+true
+nil
+user=> (if nil (println "true"))
+nil
+user=> (if "" (println "true"))                                                                                                                                                                                                              
+true
+nil
+user=> (if 1 (println "true"))                                                                                                                                                                                                               
+true
+nil
+user=> (if -1 (println "true"))                                                                                                                                                                                                              
+true
+nil

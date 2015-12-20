@@ -1,0 +1,32 @@
+user=> (println "master yoda\nluke skywalker\ndarth vader")                                                                                                                                                                                  
+master yoda
+luke skywalker
+darth vader
+nil
+user=> (println )
+
+nil
+user=> (println "a" "b" "c")
+a b c
+nil
+user=> (println "a" "b"  "c")
+a b c
+nil
+user=> (str 1)
+"1"
+user=> (str (new java.lang.Object))                                                                                                                                                                                                          
+"java.lang.Object@49df3d79"
+user=> (str (new Object))                                                                                                                                                                                                                    
+"java.lang.Object@63e9f3c6"
+user=> (str "yoda, " "luke, " "darth")
+"yoda, luke, darth"
+user=> (str "one: " 1 " two: " 2)                                                                                                                                                                                                            
+"one: 1 two: 2"
+user=> \a
+\a
+user=> (str \f \a \r \c \e)
+"farce"
+user=> (= "a" \a)
+false
+user=> (= (str \a) "a")
+true

@@ -1,0 +1,50 @@
+daijun@daijun-PC /cygdrive/d/codes/guiwuu/notes_of_7l7w/6-clojure/day1/seven
+$ lein repl
+Retrieving clojure-complete/clojure-complete/0.2.3/clojure-complete-0.2.3.pom from clojars
+Retrieving clojure-complete/clojure-complete/0.2.3/clojure-complete-0.2.3.jar from clojars
+nREPL server started on port 12448 on host 127.0.0.1 - nrepl://127.0.0.1:12448
+REPL-y 0.3.5, nREPL 0.2.6
+Clojure 1.6.0
+Java HotSpot(TM) 64-Bit Server VM 1.8.0_25-b18
+    Docs: (doc function-name-here)
+          (find-doc "part-of-name-here")
+  Source: (source function-name-here)
+ Javadoc: (javadoc java-object-or-class-here)
+    Exit: Control+D or (exit) or (quit)
+ Results: Stored in vars *1, *2, *3, an exception in *e
+
+user=> (println "Give me some Clojure!")
+Give me some Clojure!
+nil
+user=> (- 1)
+-1
+user=> (+ 1 1)
+2
+user=> (* 10 10)                                                                                                                                                                                                                             
+100
+user=> (/ 1 3)                                                                                                                                                                                                                               
+1/3
+user=> (/ 2 4)
+1/2
+user=> (/ 2.0 4)
+0.5
+user=> (class (/ 1 3))
+clojure.lang.Ratio
+user=> (mod 5 4)
+1
+user=> (/ (/ 12 2) (/ 6 2))
+2
+user=> (+ 2 2 2 2)
+8
+user=> (- 8 1 2)
+5
+user=> (/ 8 2 2)                                                                                                                                                                                                                             
+2
+user=> (< 1 2 3)                                                                                                                                                                                                                             
+true
+user=> (< 1 3 2 4)
+false
+user=> (+ 3.0 5)
+8.0
+user=> (+ 3 5.0)
+8.0
