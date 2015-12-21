@@ -1,0 +1,13 @@
+user=> (defn collection-type [col]                                                                                                                                                                                                           
+  #_=>  (if (list? col) :list
+  #_=>   (if (vector? col) :vector
+  #_=>    (if (map? col) :map nil))))
+#'user/collection-type
+user=> (collection-type '(1))                                                                                                                                                                                                                
+:list
+user=> (collection-type [1])                                                                                                                                                                                                                 
+:vector
+user=> (collection-type {1 1})                                                                                                                                                                                                               
+:map
+user=> (collection-type #{1 })                                                                                                                                                                                                               
+nil

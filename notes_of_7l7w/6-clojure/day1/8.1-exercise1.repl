@@ -1,0 +1,12 @@
+user=> (defn big [st n] (<= (count st) n))                                                                                                                                                                                                   
+#'user/big
+user=> (big "" 3)                                                                                                                                                                                                                            
+true
+user=> (big "x" 3)
+true
+user=> (big "xx" 3)
+true
+user=> (big "xxx" 3)
+true
+user=> (big "xxxx" 3)
+false
