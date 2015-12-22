@@ -1,0 +1,21 @@
+user=> ; Broken unless
+
+user=> (defn unless [test body] (if (not test) body))                                                                                                                                                                                        
+#'user/unless
+user=> (unless true (println "Danger, danger Will Robinson"))                                                                                                                                                                                
+Danger, danger Will Robinson
+nil
+user=> (macroexpand ''something-we-do-not-want-interpreted)                                                                                                                                                                                  
+(quote something-we-do-not-want-interpreted)
+user=> (macroexpand '#(count %))
+(fn* [p1__1413#] (count p1__1413#))
+user=> (defmacro unless [test body]                                                                                                                                                                                                          
+  #_=>   (list 'if (list 'not test) body))
+#'user/unless
+user=> (macroexpand '(unless condition body))
+(if (not condition) body)
+user=> (unless true (println "No more danger, Will."))                                                                                                                                                                                       
+nil
+user=> (unless false (println "Now, THIS is The FORCE."))
+Now, THIS is The FORCE.
+nil

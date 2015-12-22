@@ -1,0 +1,20 @@
+user=> (defn size [v]                                                                                                                                                                                                                        
+  #_=>  (if (empty? v)
+  #_=>     0
+  #_=>   (inc (size (rest v)))))
+#'user/size
+user=> (size [1 2 3])
+3
+user=> (loop [x x-initial-value, y y-initial-value]                                                                                                                                                                                          
+  #_=>   (do-somthing-with x y))
+
+CompilerException java.lang.RuntimeException: Unable to resolve symbol: x-initial-value in this context, compiling:(C:\cygwin\tmp\form-init6312782801172836701.clj:1:1) 
+user=> (loop [x 1] x)
+1
+user=> (defn size [v]
+  #_=>   (loop [l v, c 0]
+  #_=>     (if (empty? l) c                                                                                                                                                                                                                  
+  #_=>      (recur (rest l) (inc c)))))
+#'user/size
+user=> (size [1 2 3])                                                                                                                                                                                                                        
+3

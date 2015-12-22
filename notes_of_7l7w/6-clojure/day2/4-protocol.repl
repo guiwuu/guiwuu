@@ -1,0 +1,31 @@
+user=> (defprotocol Compass                                                                                                                                                                                                                  
+  #_=>   (direction [c])
+  #_=>   (left [c])
+  #_=>   (right [c]))
+Compass
+user=> (def directions [:north :east :south :west])
+#'user/directions
+user=> (defn turn [base amount](rem (+ base amount) (count directions)))
+#'user/turn
+user=> (turn 1 1)
+2
+user=> (turn 3 1)
+0
+user=> (turn 2 3)                                                                                                                                                                                                                            
+1
+user=> (defrecord SimpleCompass [bearing]
+  #_=>   Compass
+  #_=>     (direction [_] (directions bearing))
+  #_=>     (left [_] (SimpleCompass. (turn bearing 3)))
+  #_=>     (right [_] (SimpleCompass. (turn bearing 1)))
+  #_=>   Object
+  #_=>     (toString [this] (str "[" (direction this) "]")))                                                                                                                                                                                 
+user.SimpleCompass
+user=> (def c (SimpleCompass. 0))
+#'user/c
+user=> (left c)                                                                                                                                                                                                                              
+#user.SimpleCompass{:bearing 3}
+user=> c
+#user.SimpleCompass{:bearing 0}
+user=> (:bearing c)
+0

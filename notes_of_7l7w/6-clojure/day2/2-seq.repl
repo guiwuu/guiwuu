@@ -1,0 +1,41 @@
+user=> [1 2 3]
+[1 2 3]
+user=> (rest [1 2 3])                                                                                                                                                                                                                        
+(2 3)
+user=> (every? number? [1 2 3 :four])
+false
+user=> (some nil? [1 2 nil])                                                                                                                                                                                                                 
+true
+user=> (not-every? odd? [1 3 5])                                                                                                                                                                                                             
+false
+user=> (not-any? number?[:one :two :three])
+true
+user=> (def words ["luke" "chewie" "han" "lando"])
+#'user/words
+user=> (filter (fn [word] (> (count word) 4)) words)                                                                                                                                                                                         
+("chewie" "lando")
+user=> (map (fn [x] (* x x)) [1 1 2 3 5])
+(1 1 4 9 25)
+user=> (def colors ["red" "blue"])
+#'user/colors
+user=> (def toys ["block" "car"])
+#'user/toys
+user=> (for [x colors] (str "I like " x))                                                                                                                                                                                                    
+("I like red" "I like blue")
+user=> (for [x colors, y toys] (str "I like " x " " y "s"))                                                                                                                                                                                  
+("I like red blocks" "I like red cars" "I like blue blocks" "I like blue cars")
+user=> (defn small-word? [w] (< (count w) 4))
+#'user/small-word?
+user=> (for [x colors, y toys, :when (small-word? y)]
+  #_=>   (str "I like " x " " y "s"))
+("I like red cars" "I like blue cars")
+user=> (reduce + [1 2 3 4])
+10
+user=> (reduce * [1 2 3 4 5])                                                                                                                                                                                                                
+120
+user=> (sort [3 1 2 4])
+(1 2 3 4)
+user=> (defn abs [x] (if (< x 0) (- x) x))                                                                                                                                                                                                   
+#'user/abs
+user=> (sort-by abs [-1 -4 3 2])
+(-1 2 3 -4)
