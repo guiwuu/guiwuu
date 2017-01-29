@@ -115,4 +115,23 @@ public class UmdWriterTest {
         }
         assertArrayEquals(expected.getCover().getData(), actual.getCover().getData());
     }
+
+    @Test
+    public void test() throws Exception {
+        Umd umd = new Umd();
+        UmdHeader uh = umd.getHeader();
+        uh.setTitle("FoxTestUMD");
+
+        umd.addChapter("4", UmdUtil.unicode("33"));
+        umd.addChapter("5", UmdUtil.unicode("44"));
+
+        UmdCover cover;
+            cover = new UmdCover(UmdUtil.genImage("cover", 120, 80));
+            umd.setCover(cover);
+
+
+        UmdWriter uw = new UmdWriter(umd);
+        uw.writeToUmd(new File("d:/tmp/jumd/test.UMD"));
+        System.out.println("生成完毕");
+    }
 }

@@ -9,3 +9,5 @@ OTP Design Principles Overview http://www.erlang.org/doc/design_principles/des_p
 Supervisor Behaviour http://www.erlang.org/doc/design_principles/sup_princ.html
 Supervisors in Erlang http://www.hccp.org/supervisors.html
 Gen_Server Behaviour http://www.erlang.org/doc/design_principles/gen_server_concepts.html
+OTP supervisor http://www.erlang.org/doc/man/supervisor.html
+OTP gen_server http://www.erlang.org/doc/man/gen_server.html
