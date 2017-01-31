@@ -1,4 +1,4 @@
-package com.guiwuu.puzzle.cards;
+package com.guiwuu.jpuzzle.amazon;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,7 +34,7 @@ import java.util.List;
  * 3. A A ABCDE F U X Y Z
  *
  * @auther diancang
- * @since 10/9/13
+ * @since 2013-10-09
  */
 public class SplitListIntoGroup {
 

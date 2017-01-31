@@ -1,4 +1,4 @@
-package com.guiwuu.puzzle.cards;
+package com.guiwuu.jpuzzle.amazon;
 
 import java.util.Arrays;
 
@@ -13,7 +13,7 @@ import java.util.Arrays;
  * Return 1 means we can discard all cards in hand, otherwise return 0.
  *
  * @auther diancang
- * @since 10/8/13
+ * @since 2013-10-08
  */
 public class Majiang {
 
