@@ -7,6 +7,8 @@
     * brew cask install iterm2
 1. Paste 2
 1. Scroll Reverser
+1. Intelij Idea
+1. Visual Code
 
 ## shortcuts
 
