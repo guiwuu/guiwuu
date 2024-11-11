@@ -15,6 +15,7 @@
 * screenshot
   * cmd+shift+4 -> custom select
   * cmd+shift+4+space -> area select
+  * cmd+shift+crtl+4 -> custom select and copy image to clipboard
 * paste
   * command + option + V -> folder
   * command + option + shift + V -> no format
