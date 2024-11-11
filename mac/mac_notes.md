@@ -5,7 +5,7 @@
     * brew install zsh
     * brew install oh-my-zsh
     * brew cask install iterm2
-1. Paste
+1. Paste 2
 1. Scroll Reverser
 
 ## shortcuts
