@@ -25,6 +25,7 @@ git
 		git log
 			git log HEAD -1
 			git log --oneline
+                glo -10
 		git commit --amend
 		git cherry-pick d467740 de906d4
 	cherry-pick
