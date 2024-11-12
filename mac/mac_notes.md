@@ -5,6 +5,7 @@
     * brew install zsh
     * brew install oh-my-zsh
     * brew cask install iterm2
+      * install solarized theme - https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized
 1. Paste 2
 1. Scroll Reverser
 1. Intelij Idea
