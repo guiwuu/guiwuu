@@ -37,6 +37,15 @@ basic
 
 ## stat
 
+* iostat
+
+```
+每秒刷新
+	iostat -t 1
+读写速率的单位KB(或MB)
+	iostat -k(-m)
+```
+
 ```
 stat
 	strace
@@ -46,11 +55,6 @@ stat
 		top -H
 		top -p <pid> -H
 	ps
-	iostat
-		每秒刷新
-			iostat -t 1
-		读写速率的单位KB(或MB)
-			iostat -k(-m)
 	lsof
 		按文件查找
 			lsof/lsof file1 file2
@@ -111,6 +115,12 @@ stat
 	vmstat
 		每隔1s刷新一次上下文切换
 			vmstat -1
+```
+* pidstat
+
+```
+pidstat -d 1 # disk usage with 1s auto refresh
+pidstat -u # cpu usage
 ```
 
 ## net
